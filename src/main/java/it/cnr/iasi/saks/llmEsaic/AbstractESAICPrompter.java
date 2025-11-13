@@ -17,9 +17,16 @@
  */
 package it.cnr.iasi.saks.llmEsaic;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import org.testcontainers.shaded.org.apache.commons.io.IOUtils;
 
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.ollama.OllamaChatModel;
@@ -37,10 +44,28 @@ public abstract class AbstractESAICPrompter {
     private static final String LLM_VERSION = "latest";
     private static final double LLM_TEMPERATURE = 0.8;
     private static final int LLM_TIMEOUT = 300;
+
+    private static final int TOTAL_PICO = 12;
+
+    private static final String PICO_TAG = "_§§_";
+    private static final String REC_TAG = "_çç_";
+    private static final String REC_SEPARATOR = "_";
+    private static final String CASE_TAG = "_°°_";
     
+    private static final String ESAIC_PATH = "src/main/resources/ESAIC";
+	private static final String ESAIC_PICO_PATH = ESAIC_PATH + "/PICO" + PICO_TAG;
+	private static final String ESAIC_CASE_PATH = ESAIC_PATH + "/Cases";
+
+	private static final String REC_FILENAME = "R"+REC_TAG+".txt";
+	private static final String CASE_FILENAME = "case"+CASE_TAG+".txt";
+
+	private static final String UNSET = "THIS ITEM HAS NOT BEEN SET";
+
     private List<ChatMessage> chatMessageHistory;
 
-	public AbstractESAICPrompter () {
+    private Map<String, Boolean> loadedRecommendations;
+
+    public AbstractESAICPrompter () {
 		this(OLLAMA_BASE_URL,LLM_NAME,LLM_VERSION);
 	}
 
@@ -58,6 +83,8 @@ public abstract class AbstractESAICPrompter {
 		                       .build();
 
 	    this.chatMessageHistory = new ArrayList<ChatMessage>();
+	    
+	    this.loadedRecommendations = new HashMap<String, Boolean>();
 	}
 
 	public AbstractESAICPrompter (ChatModel llm) {
@@ -91,10 +118,74 @@ public abstract class AbstractESAICPrompter {
 	
 	public void cleanHistory() {		
 		this.chatMessageHistory.clear();
+		this.loadedRecommendations.clear();
 	}
 
 	public String getLastResponse() {
 		return this.lastResponse;
 	}
+	
+	protected void loadESAIC() {
+		this.loadedRecommendations.clear();
+		
+		for (int counterPico = 1; counterPico < TOTAL_PICO; counterPico++) {
+			boolean isRecommendationUnset = false;
+			int counterRec = 0;
+			while (! isRecommendationUnset){
+				counterRec++;
+				String recID = this.getRecommendationID(counterPico, counterRec);
+				String recommendation = this.loadRecommendation(counterPico, counterRec);
+				
+				isRecommendationUnset = recommendation.equals(UNSET);
+				if (! isRecommendationUnset) {
+					String response = this.chatLLM(recommendation);
+					isRecommendationUnset = response.contains(UNSET);
+					this.loadedRecommendations.put(recID, ! isRecommendationUnset);
+				} else {
+					this.loadedRecommendations.put(recID, false);					
+				}				
+			}
+		}		
+	}
+	
+	private String loadRecommendation(String picoNumber, String recNumber) {
+		InputStream fis = null;
+		String recID = picoNumber + REC_SEPARATOR + recNumber;
+		String recommendationFileName = ESAIC_PICO_PATH.replace(PICO_TAG, picoNumber) + "/" + REC_FILENAME.replace(REC_TAG, recID);
+		try { 
+//			ClassLoader classLoader = getClass().getClassLoader();
+//			fis = classLoader.getResourceAsStream(recommendation);
+			fis = new FileInputStream(recommendationFileName);
+		} catch (FileNotFoundException e1) {
+				System.err.println("Trying to load as-a-stream the resource: " + recommendationFileName);
+				ClassLoader classLoader = getClass().getClassLoader();
+				fis = classLoader.getResourceAsStream(recommendationFileName);
+			}
 
+		String data = UNSET;
+		
+		try {
+			data = IOUtils.toString(fis, "UTF-8");
+		} catch (Exception e) {
+//			e.printStackTrace();
+			System.err.println("Keeping UNSET the contents from the recommendation: " + recommendationFileName);
+			data = UNSET; 
+		}
+		
+		return data;
+	}
+
+	private String loadRecommendation(int picoNumber, int recNumber) {
+		return loadRecommendation(String.valueOf(picoNumber), String.valueOf(recNumber));	
+	}
+	
+	private String getRecommendationID(String picoNumber, String recNumber) {
+		return picoNumber + "_" + recNumber;		
+	}
+	
+	private String getRecommendationID(int picoNumber, int recNumber) {
+		return getRecommendationID(String.valueOf(picoNumber), String.valueOf(recNumber));
+	}
+	
+		
 }
