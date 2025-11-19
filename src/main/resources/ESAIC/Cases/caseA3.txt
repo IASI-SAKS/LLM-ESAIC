@@ -1,0 +1,6 @@
+CASE_ID: A3
+CONTEXT: Funzione respiratoria gravemente compromessa
+SUBJECT: uomo, 68 anni, ASA III, ex-fumatore, programmato per bypass aorto-coronarico (CABG) elettivo.
+ANAMNESIS: None. 
+EXAMINATIONS: spirometria con FEV1 35% del predetto; DLCO ridotto; dispnea a modesti sforzi.
+ANESTHESIOLOGICAL NOTE: rischio elevato di complicanze respiratorie postoperatorie (atelettasia, ventilazione prolungata).

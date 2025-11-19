@@ -1,0 +1,6 @@
+CASE_ID: A1
+CONTEXT: Anticoagulante non sospeso (Coumadin)
+SUBJECT: uomo, 72 anni, ASA III, in programma per nefrectomia parziale.
+ANAMNESIS: fibrillazione atriale cronica in TAO con warfarin.
+EXAMINATIONS: INR 2,6 il giorno della valutazione.
+ANESTHESIOLOGICAL NOTE: paziente non ha interrotto il Coumadin nei tempi previsti, né è stato impostato bridging con eparina.

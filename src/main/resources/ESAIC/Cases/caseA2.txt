@@ -1,0 +1,6 @@
+CASE_ID: A2
+CONTEXT: Anemia preoperatoria
+SUBJECT: donna, 65 anni, ASA II, candidata a resezione gastrica per neoplasia (non urgente/emergente, ma ad alto rischio emorragico).
+ANAMNESIS: None.
+EXAMINATIONS: Hb 7 g/dL; ferritina bassa; nessun supporto marziale iniziato.
+ANESTHESIOLOGICAL NOTE: il rischio trasfusionale perioperatorio risulta elevato. Correzione dell'anemia riduce complicanze e necessità di trasfusioni.

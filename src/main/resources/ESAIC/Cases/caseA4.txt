@@ -1,0 +1,6 @@
+CASE_ID: A4
+CONTEXT: Vie aeree difficili
+SUBJECT: donna, 54 anni, ASA II, candidata a tiroidectomia totale.
+ANAMNESIS: None
+EXAMINATIONS: Valutazione vie aeree: Mallampati IV, apertura bocca <3 cm, limitata estensione cervicale, El-Ganzouri score: 8; predizione di intubazione difficile.
+ANESTHESIOLOGICAL NOTE: per l'intervento è necessaria intubazione orotracheale sicura; previsto uso di fibrobroncoscopio in sedazione con mantenimento respiro spontaneo.
