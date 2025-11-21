@@ -50,7 +50,7 @@ public class ESAICPrompts {
 			+ "When the process is over, I will prompt you with: \"" + END_OF_INPUT + "\". "
 			+ "If this message is clear just reply: \""+ ACK + "\".";
 
-	private final static String GRADES_LOADING_HEADER = "As you know, ESAIC Recommendations have associated a severity index as: (GRADE: R) "
+	private final static String GRADE_DESCRIPTIONS_HEADER = "As you know, ESAIC Recommendations have associated a severity index as: (GRADE: R) "
 			+ "These are the meaning of the severity indexes "
 			+ "Each Recommendation has a severity index which is expressed in the form: (GRADE: R), where R ranks the severity of the Recommendation. "
 			+ "(GRADE: 1A) means: Strong recommendation, high-quality evidence; "
@@ -59,7 +59,9 @@ public class ESAICPrompts {
 			+ "(GRADE: 2A) means: Weak recommendation, high-quality evidence; "
 			+ "(GRADE: 2B) means: Weak recommendation, moderate-quality evidence; "
 			+ "(GRADE: 2C) means: Weak recommendation, low-quality evidence; "
-			+ "(CPS) means: Very low-quality evidence. "
+			+ "(GRADE: CPS) means: Very low-quality evidence. "
+			+ "Overall: Strong recommendations should be take in consideration, while Weak recommendations can be take in considerations. "
+			+ "In addition: High-quality evidences impliy confidence in the estimation of benefits and risks; moderate-quality evidence can impact the confidence in the estimation of benefits and risks; low-quality evidences may lead to uncertain effects; very low-quality evidences leads to high uncertainty in the estimates, but benefits may outweigh risks and burdens. "
 			+ "If this message is clear just reply: \""+ ACK + "\".";
 
 	private final static String CASE_LOADING_HEADER = "As professional expert in Anaesthesiology and Intensive Care "
@@ -79,6 +81,10 @@ public class ESAICPrompts {
 			+ CASE_DECISION + ": where you only report either : " + CASE_POSTPONE + ", or " + CASE_PROCEED + ". You report the former if the suggestion is to postpone the surgery, while the latter if the suggestion is to proceed with the surgery."
 			+ CASE_DECISION_EXPLAINATION + ": where you explain your suggestion. Note that your explaination has to take into account and explicitly cite one or more ESAIC Recommendation.\n"
 			+ "If these instructions are clear just reply: \""+ ACK + "\", otherwise: " + "\""+ NACK + "\".";
+
+	public static String getGradeDescriptionsHeader() {
+		return GRADE_DESCRIPTIONS_HEADER;
+	}
 
 	public static String getCaseLoadingHeader() {
 		return CASE_LOADING_HEADER;

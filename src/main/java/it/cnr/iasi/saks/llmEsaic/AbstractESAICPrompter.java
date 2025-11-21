@@ -91,7 +91,7 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 	protected boolean isRecomandationLoaded(String picoNumber, String recNumber) {
 		boolean isLoaded = this.areRecomandationsProcessable();
 		if (isLoaded) {
-			String recID = this.getRecommendationID(picoNumber, recNumber);
+			String recID = this.computeRecommendationID(picoNumber, recNumber);
 			Boolean status = this.loadedRecommendations.get(recID);
 			isLoaded = (status == null) ? false : status;
 		}
@@ -118,7 +118,7 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 			int counterRec = 0;
 			while (! isRecommendationUnset){
 				counterRec++;
-				String recID = this.getRecommendationID(counterPico, counterRec);
+				String recID = this.computeRecommendationID(counterPico, counterRec);
 				System.err.println("Processing Recommendation: " + recID);
 
 				String recommendation = this.loadRecommendation(counterPico, counterRec);
@@ -140,6 +140,10 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 
 		prompt = ESAICPrompts.getEndOfInput();
 		response = this.chatLLM(prompt);
+		
+		prompt = ESAICPrompts.getGradeDescriptionsHeader();
+		response = this.chatLLM(prompt);
+//		headerProcessed = headerProcessed && response.contains(ESAICPrompts.getAck());
 	}
 	
 	private String loadRecommendation(String picoNumber, String recNumber) {
@@ -173,12 +177,12 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 		return loadRecommendation(String.valueOf(picoNumber), String.valueOf(recNumber));	
 	}
 	
-	private String getRecommendationID(String picoNumber, String recNumber) {
+	protected String computeRecommendationID(String picoNumber, String recNumber) {
 		return "R" + picoNumber + "." + recNumber;		
 	}
 	
-	private String getRecommendationID(int picoNumber, int recNumber) {
-		return getRecommendationID(String.valueOf(picoNumber), String.valueOf(recNumber));
+	protected String computeRecommendationID(int picoNumber, int recNumber) {
+		return computeRecommendationID(String.valueOf(picoNumber), String.valueOf(recNumber));
 	}
 	
 		

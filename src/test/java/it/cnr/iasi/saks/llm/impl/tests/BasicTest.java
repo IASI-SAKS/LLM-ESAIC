@@ -38,7 +38,7 @@ public class BasicTest {
     public void simpleConversation1WithoutMemoryTest() {
     	DummyPrompter prompter = new DummyPrompter();
     	
-    	String prompt = "My name is Guybrush Threepwood. If it is clear just reply: \"--OK--\"";		
+    	String prompt = "My name is Guybrush Threepwood. If it's clear what my name is, only answer: \"--OK--\"";		
     	String answer = prompter.queryLLM_NoHistory(prompt);    		
     	assertTrue(answer.contains("--OK--"));
 
@@ -51,7 +51,7 @@ public class BasicTest {
     public void simpleConversation2WithoutMemoryTest() {
     	DummyPrompter prompter = new DummyPrompter();
     	
-    	String prompt = "My name is Guybrush Threepwood. If it is clear just reply: \"--OK--\"";		
+    	String prompt = "My name is Guybrush Threepwood. If it's clear what my name is, only answer: \"--OK--\"";
     	String answer = prompter.queryLLM(prompt);    		
     	assertTrue(answer.contains("--OK--"));
 
@@ -64,7 +64,7 @@ public class BasicTest {
     public void simpleConversation3WithoutMemoryTest() {
     	DummyPrompter prompter = new DummyPrompter();
     	
-    	String prompt = "My name is Guybrush Threepwood. If it is clear just reply: \"--OK--\"";		
+    	String prompt = "My name is Guybrush Threepwood. If it's clear what my name is, only answer: \"--OK--\"";		
     	String answer = prompter.chatLLM(prompt);    		
     	assertTrue(answer.contains("--OK--"));
 
@@ -77,7 +77,7 @@ public class BasicTest {
     public void simpleConversationWithSomeMemoryTest() {
     	DummyPrompter prompter = new DummyPrompter();
     	
-    	String prompt = "My name is Guybrush Threepwood. If it is clear just reply: \"--OK--\"";		
+    	String prompt = "My name is Guybrush Threepwood. If it's clear what my name is, only answer: \"--OK--\"";		
     	String answer = prompter.chatLLM(prompt);    		
     	assertTrue(answer.contains("--OK--"));
 
@@ -90,7 +90,7 @@ public class BasicTest {
     public void simpleConversationTest() {
     	DummyPrompter prompter = new DummyPrompter();
     	
-    	String prompt = "My name is Guybrush Threepwood. If it is clear just reply: \"--OK--\"";		
+    	String prompt = "My name is Guybrush Threepwood. If it's clear what my name is, only answer: \"--OK--\"";		
     	String answer = prompter.chatLLM(prompt);    		
     	assertTrue(answer.contains("--OK--"));
 
@@ -104,12 +104,12 @@ public class BasicTest {
     	DummyPrompter prompter = new DummyPrompter();
     	
     	// PROMPTER must recall this information
-    	String prompt = "My name is Guybrush Threepwood. If it is clear just reply: \"--OK--\"";		
+    	String prompt = "My name is Guybrush Threepwood. If it's clear what my name is, only answer: \"--OK--\"";		
     	String answer = prompter.chatLLM(prompt);    		
     	assertTrue(answer.contains("--OK--"));
 
     	// PROMPTER should not recall this information
-    	prompt = "Update your information about my name, from now call me LeChuck. If the message is clear only reply: \"--OK--\"";		
+    	prompt = "Update your information about my name, from now call me LeChuck. If it's clear what my current name is, only answer: \"--OK--\"";		
     	answer = prompter.queryLLM(prompt);    		
     	assertTrue(answer.contains("--OK--"));
 
@@ -118,7 +118,7 @@ public class BasicTest {
     	assertFalse(answer.contains("LeChuck"));
     	
     	// PROMPTER should not recall anything
-    	prompt = "What's my name? If you ignore it just reply: \"--NONE--\"";		
+    	prompt = "What's my name? If you ignore it, simply answer: \"--NONE--\"";		
     	answer = prompter.queryLLM_NoHistory(prompt);
     	assertTrue(answer.contains("--NONE--"));
 
