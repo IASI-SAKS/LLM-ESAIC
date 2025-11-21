@@ -22,19 +22,29 @@ import it.cnr.iasi.saks.llmEsaic.AbstractESAICPrompter;
 public class DummyESAICPrompter extends AbstractESAICPrompter {
 
 	public DummyESAICPrompter () {
-		if (! this.areRecomandationsProcessable()) {
 			this.loadESAIC();
-		}
 	}
 	
 	public boolean loadESAIC(int picoNumber, int recNumber) {
+		if (! this.areRecomandationsProcessable()) {
+			this.loadESAIC();
+		}
 		return this.isRecomandationLoaded(picoNumber, recNumber);
 	}
 	
 	public String queryRecommendationGrade(int picoNumber, int recNumber) {		
-		String recID = this.computeRecommendationID(picoNumber, recNumber);
-		String prompt = "Return the grade associated with EASIC recommendation: " + recID + ". Your answer must follow the format: \"GRADE: R\", where R is the severity of the Recommendation."; 
-		String response = this.queryLLM(prompt);
+		String response = AbstractESAICPrompter.UNSET;
+		
+		if (this.isRecomandationLoaded(picoNumber, recNumber))
+		{		
+			String recID = this.computeRecommendationID(picoNumber, recNumber);
+//			String prompt = "Return the grade of the EASIC recommendation: " + recID + ". Your answer must follow the format: \"GRADE: R\", where R is the rank of " + recID + ". "; 
+			String prompt = "Return the grade of the EASIC recommendation: " + recID + ". Your answer must start with the keyword: \"GRADE:\""; 
+			
+			response = this.queryLLM(prompt);
+			response = response.replaceFirst(".*GRADE:","").trim();
+		}
+		
 		return response;
 	}
 }
