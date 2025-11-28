@@ -42,52 +42,84 @@ public class ESAICPrompts {
 	private static final String CASE_POSTPONE = "POSTPONE";
 
 
+	private final static String PREAMBLE = "Please, avoid to invent facts. "
+			+ "Before answering always take in consideration all the my previous prompts first, and then your own knowledge.";
+
 	private final static String RECOMMENDATION_LOADING_HEADER = "I am loading a list of Recommandations by ESAIC"
 			+ " (European Society of Anaesthesiology and Intensive Care). "
-			+ "Each Recommendation in introduced by its ID in the form: RX.Y, where X and Y are numbers. "
-			+ "Each Recommendation has a severity index which is expressed in the form: (GRADE: R), where R ranks the severity of the Recommendation. "
-			+ "After each Recommendation is processed your answer has to be only: \""+ ACK + "\". "
-			+ "When the process is over, I will prompt you with: \"" + END_OF_INPUT + "\". "
-			+ "If this message is clear just reply: \""+ ACK + "\".";
+			+ "Each Recommendation in introduced by its identifier: RX.Y, where X and Y are numbers. "
+			+ "Each Recommendation has a severity index, for example a severity index G for the Recommendation RX.Y is reported as: (RX.Y GRADE: G) . "
+			+ "When the process is over, I will prompt you with: \"" + END_OF_INPUT + "\". ";
 
-	private final static String GRADE_DESCRIPTIONS_HEADER = "As you know, ESAIC Recommendations have associated a severity index as: (GRADE: R) "
-			+ "These are the meaning of the severity indexes "
-			+ "Each Recommendation has a severity index which is expressed in the form: (GRADE: R), where R ranks the severity of the Recommendation. "
-			+ "(GRADE: 1A) means: Strong recommendation, high-quality evidence; "
-			+ "(GRADE: 1B) means: Strong recommendation, moderate-quality evidence; "
-			+ "(GRADE: 1C) means: Strong recommendation, low-quality evidence; "
-			+ "(GRADE: 2A) means: Weak recommendation, high-quality evidence; "
-			+ "(GRADE: 2B) means: Weak recommendation, moderate-quality evidence; "
-			+ "(GRADE: 2C) means: Weak recommendation, low-quality evidence; "
-			+ "(GRADE: CPS) means: Very low-quality evidence. "
+	private final static String RECOMMENDATION_LOADING_ACK_HEADER = "I am loading a list of Recommandations by ESAIC"
+			+ " (European Society of Anaesthesiology and Intensive Care). "
+			+ "Each Recommendation in introduced by its identifier: RX.Y, where X and Y are numbers. "
+			+ "Each Recommendation has a severity index, for example a severity index G for the Recommendation RX.Y is reported as: (RX.Y GRADE: G) . "
+			+ "After each Recommendation is processed your answer has to be only: \""+ ACK + "\". "
+			+ "When the process is over, I will prompt you with: \"" + END_OF_INPUT + "\". ";
+
+	private final static String GRADE_DESCRIPTIONS_HEADER = "As you know, an ESAIC Recommendations RX.Y has a severity index as: (RX.Y GRADE: G) "
 			+ "Overall: Strong recommendations should be take in consideration, while Weak recommendations can be take in considerations. "
 			+ "In addition: High-quality evidences impliy confidence in the estimation of benefits and risks; moderate-quality evidence can impact the confidence in the estimation of benefits and risks; low-quality evidences may lead to uncertain effects; very low-quality evidences leads to high uncertainty in the estimates, but benefits may outweigh risks and burdens. "
-			+ "If this message is clear just reply: \""+ ACK + "\".";
+			+ "These are the meaning of the possible values associated with the severity index G:"
+			+ "1A means: Strong recommendation, high-quality evidence; "
+			+ "1B means: Strong recommendation, moderate-quality evidence; "
+			+ "1C means: Strong recommendation, low-quality evidence; "
+			+ "2A means: Weak recommendation, high-quality evidence; "
+			+ "2B means: Weak recommendation, moderate-quality evidence; "
+			+ "2C means: Weak recommendation, low-quality evidence; "
+			+ "CPS means: Very low-quality evidence. ";
 
 	private final static String CASE_LOADING_HEADER = "As professional expert in Anaesthesiology and Intensive Care "
 			+ "you are requested to suggest a surgery decision on a specific clinical case. "
-			+ "Each clinical case is reported as a whole between the following tags: \n"
-			+ BEGIN_OF_INPUT + ", and " + END_OF_INPUT + ". \n"
-			+ "Each case is structured as follows: \n"
-			+ CASE_ID + ": which reports a unique identifies of the clinical case; \n" 
-			+ CASE_CONTEXT + ":  which reports additional information about the patients or their teraphies; \n"
-			+ CASE_SUBJECT + ": which reports information about the patient; \n"
-			+ CASE_ANAMNESIS + ": which reports anamnesis information about the clinical case; \n"
-			+ CASE_EXAMINATIONS + ": which reports data about objective examinations performed on the patient; \n"
-			+ CASE_ANESTHESIOLOGICAL_NOTE + ": which reports any other information by some Anaesthesiology expert. \n"
+			+ "Each clinical case is reported as a whole between the following tags: "
+			+ BEGIN_OF_INPUT + ", and " + END_OF_INPUT + ". "
+			+ "Each case is structured as follows: "
+			+ CASE_ID + ": which reports a unique identifies of the clinical case; " 
+			+ CASE_CONTEXT + ":  which reports additional information about the patients or their teraphies; "
+			+ CASE_SUBJECT + ": which reports information about the patient; "
+			+ CASE_ANAMNESIS + ": which reports anamnesis information about the clinical case; "
+			+ CASE_EXAMINATIONS + ": which reports data about objective examinations performed on the patient; "
+			+ CASE_ANESTHESIOLOGICAL_NOTE + ": which reports any other information by some Anaesthesiology expert. "
 			+ "Each decision has to be retuned between a line containing only the tag: "
-			+ BEGIN_OF_ANSWER + ", and a line containing only the tag: " + END_OF_ANSWER + " .\n" 
-			+ "Each decision has to be structured as follows: \n"
+			+ BEGIN_OF_ANSWER + ", and a line containing only the tag: " + END_OF_ANSWER + " ." 
+			+ "Each decision has to be structured as follows: "
 			+ CASE_DECISION + ": where you only report either : " + CASE_POSTPONE + ", or " + CASE_PROCEED + ". You report the former if the suggestion is to postpone the surgery, while the latter if the suggestion is to proceed with the surgery."
-			+ CASE_DECISION_EXPLAINATION + ": where you explain your suggestion. Note that your explaination has to take into account and explicitly cite one or more ESAIC Recommendation.\n"
-			+ "If these instructions are clear just reply: \""+ ACK + "\", otherwise: " + "\""+ NACK + "\".";
+			+ CASE_DECISION_EXPLAINATION + ": where you explain your suggestion. Note that your explaination has to take into account and explicitly cite one or more ESAIC Recommendation.";
+
+	public static String getAckMessage() {
+		return "If this message is clear just reply: \""+ ACK + "\".";
+	}
+	
+	public static String getAckAndNackMessage() {
+		return "If these instructions are clear just reply: \""+ ACK + "\", otherwise: " + "\""+ NACK + "\".";
+	}
+
+	public static String getPreamble() {
+		return PREAMBLE;
+	}
+
+	public static String getPreambleWithAck() {
+		String message = getPreamble() + " " + getAckMessage();
+		return message;
+	}
 
 	public static String getGradeDescriptionsHeader() {
 		return GRADE_DESCRIPTIONS_HEADER;
 	}
 
+	public static String getGradeDescriptionsHeaderWithAck() {
+		String message = getGradeDescriptionsHeader() + " " + getAckMessage();
+		return message;
+	}
+
 	public static String getCaseLoadingHeader() {
 		return CASE_LOADING_HEADER;
+	}
+
+	public static String getCaseLoadingHeaderWithAckAndNack() {
+		String message = getCaseLoadingHeader() + " " + getAckAndNackMessage();
+		return message;
 	}
 
 	public static String getAck() {
@@ -96,6 +128,11 @@ public class ESAICPrompts {
 
 	public static String getRecommendationLoadingHeader() {
 		return RECOMMENDATION_LOADING_HEADER;
+	}
+
+	public static String getRecommendationLoadingHeaderWithAck() {
+		String message = RECOMMENDATION_LOADING_ACK_HEADER + " " + getAckMessage();
+		return message;
 	}
 
 	public static String getNack() {
