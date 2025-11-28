@@ -20,7 +20,6 @@ package it.cnr.iasi.saks.llmEsaic;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,13 +27,10 @@ import java.util.Map;
 
 import org.testcontainers.shaded.org.apache.commons.io.IOUtils;
 
+import dev.langchain4j.data.message.ChatMessage;
 import dev.langchain4j.model.chat.ChatModel;
-import dev.langchain4j.model.ollama.OllamaChatModel;
 import it.cnr.iasi.saks.llm.AbstractPrompter;
 import it.cnr.iasi.saks.llmEsaic.prompts.ESAICPrompts;
-import dev.langchain4j.data.message.UserMessage;
-import dev.langchain4j.data.message.AiMessage;
-import dev.langchain4j.data.message.ChatMessage;
 
 public abstract class AbstractESAICPrompter extends AbstractPrompter {
 	
@@ -56,6 +52,9 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
     public AbstractESAICPrompter () {
 		super();
 
+		String prompt = ESAICPrompts.getPreamble();
+		String response = this.chatLLM(prompt);
+		
 		this.loadedRecommendations = new HashMap<String, Boolean>();
 	}
 
@@ -106,12 +105,74 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 	protected void loadESAIC() {
 		this.loadedRecommendations.clear();
 		
-		String prompt = ESAICPrompts.getRecommendationLoadingHeader();
+		String prompt = ESAICPrompts.getRecommendationLoadingHeaderWithAck();
+		String response = this.chatLLM(prompt);
+		boolean headerProcessed = response.contains(ESAICPrompts.getAck());
+		if (!headerProcessed) {
+			System.err.println("Header has not been processed as expected. Possible errors while loading the ESAIC Reccommendations");
+		} 
+
+		List<ChatMessage> newHistory = this.fetchHistory();
+		List<String> tmpRecommendationList = new ArrayList<String>();
+		prompt = "\n ";
+		
+		for (int counterPico = 1; (counterPico <= TOTAL_PICO); counterPico++) {
+			System.err.println("Processing PICO: " + counterPico);
+
+			boolean isRecommendationUnset = false;
+			int counterRec = 0;
+			while (! isRecommendationUnset){
+				counterRec++;
+				String recID = this.computeRecommendationID(counterPico, counterRec);
+				System.err.println("Processing Recommendation: " + recID);
+
+				String recommendation = this.loadRecommendation(counterPico, counterRec);
+				
+				isRecommendationUnset = recommendation.equals(UNSET);
+				if (! isRecommendationUnset) {
+					prompt = prompt + recID + ": " + recommendation.replace("(GRADE:", "(" + recID + " GRADE:") + "\n";
+					tmpRecommendationList.add(recID);
+				} else {
+					this.loadedRecommendations.put(recID, false);					
+				}				
+				System.err.println("locally loaded: " + recID);
+			}			
+			System.err.println("locally done with PICO: " + counterPico);
+		}		
+		
+		prompt = prompt + ESAICPrompts.getEndOfInput() + ESAICPrompts.getAckMessage();
+		response = this.chatLLM(prompt);
+		boolean isRecommendationUnset = (response == null) || (response.isEmpty()) || (response.isBlank()) || (response.contains(UNSET) || (! response.contains(ESAICPrompts.getAck())));
+		if (! isRecommendationUnset ) {
+			String recs = "";
+			for (String recID : tmpRecommendationList) {
+				this.loadedRecommendations.put(recID, true);
+				recs = recs + ", " + recID;
+			}
+			System.err.println("Loaded: " + recs);
+		} else {
+			System.err.println("ESAIC Recommendations have not been processed as expected. Expected errors during the interactions");
+		}
+		
+		prompt = ESAICPrompts.getGradeDescriptionsHeaderWithAck();
+		response = this.chatLLM(prompt);
+//		headerProcessed = headerProcessed && response.contains(ESAICPrompts.getAck());
+	}
+
+	protected void loadESAIC_stepByStep() {
+		this.loadedRecommendations.clear();
+		
+		String prompt = ESAICPrompts.getRecommendationLoadingHeaderWithAck();
 		String response = this.chatLLM(prompt);
 //		boolean headerProcessed = (response.equalsIgnoreCase(ESAICPrompts.getAck()));
 		boolean headerProcessed = response.contains(ESAICPrompts.getAck());
 
-		for (int counterPico = 1; (headerProcessed) && (counterPico <= TOTAL_PICO); counterPico++) {
+		if (!headerProcessed) {
+			System.err.println("Header has not been processed as expected. Possible errors while loading the ESAIC Reccommendations");
+		} 
+
+//		for (int counterPico = 1; (headerProcessed) && (counterPico <= TOTAL_PICO); counterPico++) {
+		for (int counterPico = 1; (counterPico <= TOTAL_PICO); counterPico++) {
 			System.err.println("Processing PICO: " + counterPico);
 
 			boolean isRecommendationUnset = false;
@@ -126,6 +187,7 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 				isRecommendationUnset = recommendation.equals(UNSET);
 				if (! isRecommendationUnset) {
 					prompt = recID + ": " + recommendation;
+					prompt = prompt.replace("(GRADE:", "(" + recID + " GRADE:");
 					response = this.chatLLM(prompt);
 //					isRecommendationUnset = response.contains(UNSET);
 					isRecommendationUnset = !(response.contains(ESAICPrompts.getAck()));
