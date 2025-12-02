@@ -130,7 +130,8 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 				
 				isRecommendationUnset = recommendation.equals(UNSET);
 				if (! isRecommendationUnset) {
-					prompt = prompt + recID + ": " + recommendation.replace("(GRADE:", "(" + recID + " GRADE:") + "\n";
+//					prompt = prompt + recID + ": " + recommendation.replace("(GRADE:", "(" + recID + " GRADE:") + "\n";
+					prompt = prompt + recID + ": " + recommendation.replace("(GRADE:", "\n (" + recID + " has severity index:") + "\n";
 					tmpRecommendationList.add(recID);
 				} else {
 					this.loadedRecommendations.put(recID, false);					
@@ -187,7 +188,8 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 				isRecommendationUnset = recommendation.equals(UNSET);
 				if (! isRecommendationUnset) {
 					prompt = recID + ": " + recommendation;
-					prompt = prompt.replace("(GRADE:", "(" + recID + " GRADE:");
+//					prompt = prompt.replace("(GRADE:", "(" + recID + " GRADE:");
+					prompt = prompt.replace("(GRADE:", "(" + recID + " has severity index:");
 					response = this.chatLLM(prompt);
 //					isRecommendationUnset = response.contains(UNSET);
 					isRecommendationUnset = !(response.contains(ESAICPrompts.getAck()));
