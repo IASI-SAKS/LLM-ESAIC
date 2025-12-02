@@ -55,7 +55,7 @@ public class LoadingESAICTest {
 //    @CsvSource({"1,1,GRADE: 1C"})
     public void correctESAICGradesTest(int picoNumber, int recNumber, String expectedGrade) {
     	String response = prompter.queryRecommendationGrade(picoNumber, recNumber);
-    	assertEquals(expectedGrade, response);
+    	assertEquals(expectedGrade, response, "Pico: " + picoNumber +", Rec: " + recNumber );
     }
 
   
