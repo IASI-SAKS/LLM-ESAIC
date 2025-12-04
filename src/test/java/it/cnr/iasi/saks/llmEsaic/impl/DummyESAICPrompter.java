@@ -17,9 +17,9 @@
  */
 package it.cnr.iasi.saks.llmEsaic.impl;
 
-import it.cnr.iasi.saks.llmEsaic.AbstractESAICPrompter;
+import it.cnr.iasi.saks.llmEsaic.SimpleESAICPrompter;
 
-public class DummyESAICPrompter extends AbstractESAICPrompter {
+public class DummyESAICPrompter extends SimpleESAICPrompter {
 
 	public DummyESAICPrompter () {
 			this.loadESAIC();
@@ -33,13 +33,14 @@ public class DummyESAICPrompter extends AbstractESAICPrompter {
 	}
 	
 	public String queryRecommendationGrade(int picoNumber, int recNumber) {		
-		String response = AbstractESAICPrompter.UNSET;
+		String response = SimpleESAICPrompter.UNSET;
 		
 		if (this.isRecomandationLoaded(picoNumber, recNumber))
 		{		
 			String recID = this.computeRecommendationID(picoNumber, recNumber);
-//			String prompt = "Return the grade of the EASIC recommendation: " + recID + ". Your answer must follow the format: \"GRADE: R\", where R is the rank of " + recID + ". "; 
-			String prompt = "Return the grade of the EASIC recommendation: " + recID + ". Your answer must start with the keyword: \"GRADE:\""; 
+//			String prompt = "Return the grade of the ESAIC recommendation: " + recID + "? Your answer must follow the format: \"GRADE: R\", where R is the rank of " + recID + ". "; 
+//			String prompt = "Return the grade of the ESAIC recommendation: " + recID + "? Your answer must start with the keyword: \"GRADE:\""; 
+			String prompt = "Which is the severity index of the ESAIC recommendation: " + recID + "? Your answer must start with the keyword: \""+ recID + " GRADE:\""; 
 			
 			response = this.queryLLM(prompt);
 			response = response.replaceFirst(".*GRADE:","").trim();
@@ -47,4 +48,11 @@ public class DummyESAICPrompter extends AbstractESAICPrompter {
 		
 		return response;
 	}
+
+	public String informLastAnswerNotCorrect(String originalPrompt, String wrongAnswer) {
+		String prompt = "Your last answer was not correct. The prompt was: \"" + originalPrompt + "\".\n Your wrong answer was: \""+ wrongAnswer+ "\".\n Next time try to give a different answer.";
+		String response = this.chatLLM(prompt);
+		return response;
+	}
+
 }

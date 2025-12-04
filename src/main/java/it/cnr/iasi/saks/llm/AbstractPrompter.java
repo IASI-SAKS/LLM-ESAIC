@@ -1,10 +1,25 @@
+/* 
+ * This file is part of the LLM-ESAIC project.
+ * 
+ * LLM-ESAIC is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * LLM-ESAIC is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with LLM-ESAIC. If not, see <https://www.gnu.org/licenses/>
+ *
+ */
 package it.cnr.iasi.saks.llm;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.data.message.ChatMessage;
@@ -22,7 +37,9 @@ public abstract class AbstractPrompter {
     private static final String LLM_VERSION = "latest";
 //    private static final double LLM_TEMPERATURE = 0.8;
     private static final double LLM_TEMPERATURE = 0.5;
-    private static final int LLM_TIMEOUT = 300;
+//    private static final double LLM_TEMPERATURE = 0.0;
+//    private static final int LLM_TIMEOUT = 300;
+    private static final int LLM_TIMEOUT = 600;
 
     private List<ChatMessage> chatMessageHistory;
 
@@ -53,7 +70,7 @@ public abstract class AbstractPrompter {
 	/*
 	 * It does not keep in consideration the history at all.
 	 */
-	protected String simpleQueryLLM(String prompt) {		
+	public String simpleQueryLLM(String prompt) {		
 		this.lastResponse = this.llm.chat(prompt);
 		return this.lastResponse;
 	}
@@ -61,28 +78,40 @@ public abstract class AbstractPrompter {
 	/*
 	 * It only considers past history but without adding any further information.
 	 */
-	protected String queryLLM(String prompt) {		
+	public String queryLLM(String prompt) {		
 		UserMessage currentMessage = new UserMessage(prompt);
-		AiMessage currentResponse = this.chatLLM(currentMessage);
+		AiMessage currentResponse = this.partialChatLLM(currentMessage);
 				
 		this.chatMessageHistory.remove(currentMessage);
-		this.chatMessageHistory.remove(currentResponse);
+// The following statement should be useless. See the difference between chatLLM and fullChatLLM
+//		this.chatMessageHistory.remove(currentResponse);
 		
 		this.lastResponse = currentResponse.text(); 		
 		return this.lastResponse;		
 	}
 
 	/*
-	 * It considers past history, and it now is able to recall also new contents.
+	 * It considers only user-side past history, and it now is able to recall also new contents prompted by the user as context.
 	 */
-	protected String chatLLM(String prompt) {    			
+	public String partialChatLLM(String prompt) {    			
 		UserMessage currentMessage = new UserMessage(prompt);
-		AiMessage currentResponse = this.chatLLM(currentMessage);
+		AiMessage currentResponse = this.partialChatLLM(currentMessage);
 				
 		this.lastResponse = currentResponse.text(); 		
 		return this.lastResponse;		
 	}
 	
+	/*
+	 * It considers all past history, and it now is able to recall all new contents as context.
+	 */
+	public String chatLLM(String prompt) {    			
+		UserMessage currentMessage = new UserMessage(prompt);
+		AiMessage currentResponse = this.fullChatLLM(currentMessage);
+				
+		this.lastResponse = currentResponse.text(); 		
+		return this.lastResponse;		
+	}
+
 //	protected String chatLLM(String prompt) {
 ////		Conceptual example with Java Varargs from the tutorial:		
 ////	    	UserMessage firstUserMessage = UserMessage.from("Hello, my name is Klaus");
@@ -102,7 +131,7 @@ public abstract class AbstractPrompter {
 //			return this.lastResponse;		
 //		}
 
-	private AiMessage chatLLM(UserMessage currentMessage) {
+	private AiMessage partialChatLLM(UserMessage currentMessage) {
 //		Conceptual example with Java Varargs from the tutorial:		
 //	    	UserMessage firstUserMessage = UserMessage.from("Hello, my name is Klaus");
 //	    	AiMessage firstAiMessage = model.chat(firstUserMessage).aiMessage(); // Hi Klaus, how can I help you?
@@ -114,6 +143,12 @@ public abstract class AbstractPrompter {
 //		This is an example on how to convert a List into Java Varargs. Possibly the invoke to "streams()" can be omitted.
 //			locations.stream().toArray(WorldLocation[]::new)
 			AiMessage currentResponse = this.llm.chat(this.chatMessageHistory.stream().toArray(ChatMessage[]::new)).aiMessage();
+
+			return currentResponse;
+		}
+
+	private AiMessage fullChatLLM(UserMessage currentMessage) {
+			AiMessage currentResponse = this.partialChatLLM(currentMessage);
 			this.chatMessageHistory.add(currentResponse);
 
 			return currentResponse;
@@ -128,6 +163,14 @@ public abstract class AbstractPrompter {
 	}
 
 	protected List<ChatMessage> fetchHistory() {
-		return this.chatMessageHistory;
+		List<ChatMessage> currentHistory = new ArrayList<ChatMessage>();
+		for (ChatMessage chatMessage : this.chatMessageHistory) {
+			currentHistory.add(chatMessage);
+		}
+		return currentHistory;
+	}
+
+	protected void configureHistory(List<ChatMessage> history) {
+		this.chatMessageHistory = history;
 	}
 }
