@@ -32,16 +32,4 @@ public class DummyPrompter extends AbstractPrompter {
 		return answer;
 	}
 	
-	public String queryLLM_NoHistory(String prompt) {
-		return super.simpleQueryLLM(prompt);
-	}
-
-	public String queryLLM(String prompt) {
-		return super.queryLLM(prompt);
-	}
-
-	public String chatLLM(String prompt) {
-		return super.chatLLM(prompt);
-	}
-
 }

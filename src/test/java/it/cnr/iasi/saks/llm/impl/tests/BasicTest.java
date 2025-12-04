@@ -39,11 +39,11 @@ public class BasicTest {
     	DummyPrompter prompter = new DummyPrompter();
     	
     	String prompt = "My name is Guybrush Threepwood. If it's clear what my name is, only answer: \"--OK--\"";		
-    	String answer = prompter.queryLLM_NoHistory(prompt);    		
+    	String answer = prompter.simpleQueryLLM(prompt);    		
     	assertTrue(answer.contains("--OK--"));
 
     	prompt = "What's my name?";		
-    	answer = prompter.queryLLM_NoHistory(prompt);
+    	answer = prompter.simpleQueryLLM(prompt);
     	assertFalse(answer.contains("Guybrush Threepwood"));
     }
 
@@ -69,7 +69,7 @@ public class BasicTest {
     	assertTrue(answer.contains("--OK--"));
 
     	prompt = "What's my name?";		
-    	answer = prompter.queryLLM_NoHistory(prompt);
+    	answer = prompter.simpleQueryLLM(prompt);
     	assertFalse(answer.contains("Guybrush Threepwood"));
     }
 
@@ -119,7 +119,7 @@ public class BasicTest {
     	
     	// PROMPTER should not recall anything
     	prompt = "What's my name? If you ignore it, simply answer: \"--NONE--\"";		
-    	answer = prompter.queryLLM_NoHistory(prompt);
+    	answer = prompter.simpleQueryLLM(prompt);
     	assertTrue(answer.contains("--NONE--"));
 
     }

@@ -17,12 +17,18 @@
  */
 package it.cnr.iasi.saks.llmEsaic.impl;
 
+import java.util.List;
+
+import dev.langchain4j.data.message.ChatMessage;
 import it.cnr.iasi.saks.llmEsaic.SimpleESAICPrompter;
 
 public class DummyESAICPrompter extends SimpleESAICPrompter {
 
+	private String lastPrompt;
+	
 	public DummyESAICPrompter () {
 			this.loadESAIC();
+			this.lastPrompt = null;
 	}
 	
 	public boolean loadESAIC(int picoNumber, int recNumber) {
@@ -41,18 +47,40 @@ public class DummyESAICPrompter extends SimpleESAICPrompter {
 //			String prompt = "Return the grade of the ESAIC recommendation: " + recID + "? Your answer must follow the format: \"GRADE: R\", where R is the rank of " + recID + ". "; 
 //			String prompt = "Return the grade of the ESAIC recommendation: " + recID + "? Your answer must start with the keyword: \"GRADE:\""; 
 			String prompt = "Which is the severity index of the ESAIC recommendation: " + recID + "? Your answer must start with the keyword: \""+ recID + " GRADE:\""; 
+			this.lastPrompt = prompt;
 			
 			response = this.queryLLM(prompt);
-			response = response.replaceFirst(".*GRADE:","").trim();
+			response = this.clearResponse(response);
 		}
 		
 		return response;
 	}
 
-	public String informLastAnswerNotCorrect(String originalPrompt, String wrongAnswer) {
-		String prompt = "Your last answer was not correct. The prompt was: \"" + originalPrompt + "\".\n Your wrong answer was: \""+ wrongAnswer+ "\".\n Next time try to give a different answer.";
-		String response = this.chatLLM(prompt);
+	public String queryRecommendationGrade_LastAnswerNotCorrect(String wrongAnswer) {
+		String response = SimpleESAICPrompter.UNSET;
+		
+		if (this.lastPrompt != null) {
+			List<ChatMessage> backupHistory = this.fetchHistory();
+
+			String prompt = "Your last answer was not correct: \n " 
+					+ " * FORMER PROMPT:" + this.lastPrompt + "\".\n "
+					+ " * YOUR WRONG ANSWER: "+ wrongAnswer+ ".\n"
+					+ "Try to give a different answer; please replay to this prompt with: ACK.";			
+			response = this.chatLLM(prompt);
+			response = this.chatLLM(this.lastPrompt);
+			response = this.clearResponse(response);
+			this.configureHistory(backupHistory);
+		}
+		
 		return response;
 	}
 
+	public int currentHistorySize() {
+		return this.fetchHistory().size();
+	}
+	
+	private String clearResponse(String response) {
+		return response.replaceFirst(".*GRADE:","").trim();		
+	}
+	
 }

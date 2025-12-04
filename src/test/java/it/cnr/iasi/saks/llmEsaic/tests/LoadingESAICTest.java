@@ -64,22 +64,29 @@ public class LoadingESAICTest {
 //    @CsvSource({"1,1,GRADE: 1C"})
     public void correctESAICGradesTest(int picoNumber, int recNumber, String expectedGrade) {
     	int max_iterations = 5;
-    	int counter = 0;
-    	boolean completed = false;
     	
 		System.err.println("Processing ESAIC Recommendation: " + picoNumber + ", " + recNumber + " ...");
-    	while (! completed) {
-    		String response = prompter.queryRecommendationGrade(picoNumber, recNumber);
-    		try {
-    			assertEquals(expectedGrade, response, "Pico: " + picoNumber +", Rec: " + recNumber );
-    			completed = true;
-    		} catch (AssertionFailedError e) {
-    			counter ++;
-    			System.err.println("Failed processing ESAIC Recommendation: " + picoNumber + ", " + recNumber + ". Tentative " + counter + " of " + max_iterations);
-    			if (counter >= max_iterations) {    				
-    				throw e;
-    			}
-    		}	
+    	String response = prompter.queryRecommendationGrade(picoNumber, recNumber);
+    	
+    	try {
+    		assertEquals(expectedGrade, response, "Pico: " + picoNumber +", Rec: " + recNumber );
+    	} catch (AssertionFailedError e) {
+        	int counter = 0;
+        	boolean completed = false;
+
+        	while (! completed) {
+    	       	response = prompter.queryRecommendationGrade_LastAnswerNotCorrect(response);
+    	   		try {
+    	   			assertEquals(expectedGrade, response, "Pico: " + picoNumber +", Rec: " + recNumber );
+    	   			completed = true;
+    	   		} catch (AssertionFailedError e1) {
+    	   			counter ++;
+    	   			System.err.println("Failed processing ESAIC Recommendation: " + picoNumber + ", " + recNumber + ". Tentative " + counter + " of " + max_iterations);
+    	   			if (counter >= max_iterations) {    				
+    	   				throw e1;
+    	   			}
+    	   		}
+    	   	}	
     	}	
 		System.err.println("done ESAIC Recommendation: " + picoNumber + ", " + recNumber);
     }
