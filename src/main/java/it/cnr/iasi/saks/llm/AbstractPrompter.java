@@ -70,7 +70,7 @@ public abstract class AbstractPrompter {
 	/*
 	 * It does not keep in consideration the history at all.
 	 */
-	protected String simpleQueryLLM(String prompt) {		
+	public String simpleQueryLLM(String prompt) {		
 		this.lastResponse = this.llm.chat(prompt);
 		return this.lastResponse;
 	}
@@ -78,7 +78,7 @@ public abstract class AbstractPrompter {
 	/*
 	 * It only considers past history but without adding any further information.
 	 */
-	protected String queryLLM(String prompt) {		
+	public String queryLLM(String prompt) {		
 		UserMessage currentMessage = new UserMessage(prompt);
 		AiMessage currentResponse = this.partialChatLLM(currentMessage);
 				
@@ -93,7 +93,7 @@ public abstract class AbstractPrompter {
 	/*
 	 * It considers only user-side past history, and it now is able to recall also new contents prompted by the user as context.
 	 */
-	protected String partialChatLLM(String prompt) {    			
+	public String partialChatLLM(String prompt) {    			
 		UserMessage currentMessage = new UserMessage(prompt);
 		AiMessage currentResponse = this.partialChatLLM(currentMessage);
 				
@@ -104,7 +104,7 @@ public abstract class AbstractPrompter {
 	/*
 	 * It considers all past history, and it now is able to recall all new contents as context.
 	 */
-	protected String chatLLM(String prompt) {    			
+	public String chatLLM(String prompt) {    			
 		UserMessage currentMessage = new UserMessage(prompt);
 		AiMessage currentResponse = this.fullChatLLM(currentMessage);
 				
