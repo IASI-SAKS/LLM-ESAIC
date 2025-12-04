@@ -30,9 +30,10 @@ import org.testcontainers.shaded.org.apache.commons.io.IOUtils;
 import dev.langchain4j.data.message.ChatMessage;
 import dev.langchain4j.model.chat.ChatModel;
 import it.cnr.iasi.saks.llm.AbstractPrompter;
+import it.cnr.iasi.saks.llmEsaic.prompts.CommonConstants;
 import it.cnr.iasi.saks.llmEsaic.prompts.ESAICPrompts;
 
-public abstract class AbstractESAICPrompter extends AbstractPrompter {
+public class AbstractESAICPrompter extends AbstractPrompter {
 	
     private static final int TOTAL_PICO = 12;
 
@@ -40,12 +41,12 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
     private static final String REC_TAG = "_çç_";
     private static final String REC_SEPARATOR = "_";
     
-    protected static final String ESAIC_PATH = "src/main/resources/ESAIC";
+    protected static final String ESAIC_PATH = CommonConstants.getESAICDefaultPath();
 	private static final String ESAIC_PICO_PATH = ESAIC_PATH + "/PICO" + PICO_TAG;
 
 	private static final String REC_FILENAME = "R"+REC_TAG+".txt";
 
-	protected static final String UNSET = "THIS ITEM HAS NOT BEEN SET";
+	protected static final String UNSET = CommonConstants.getUNSET();
 
     private Map<String, Boolean> loadedRecommendations;
 	
@@ -82,7 +83,7 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 		this.loadedRecommendations.clear();
 	}
 
-	protected boolean areRecomandationsProcessable() {
+	public boolean areRecomandationsProcessable() {
 		boolean status = (this.loadedRecommendations != null) && (!this.loadedRecommendations.isEmpty());		
 		return status;
 	}
@@ -102,7 +103,7 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 		return isRecomandationLoaded(String.valueOf(picoNumber), String.valueOf(recNumber));	
 	}
 
-	protected void loadESAIC() {
+	public void loadESAIC() {
 		this.loadedRecommendations.clear();
 		
 		String prompt = ESAICPrompts.getRecommendationLoadingHeaderWithAck();
@@ -143,6 +144,10 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 		
 		prompt = prompt + ESAICPrompts.getEndOfInput() + ESAICPrompts.getAckMessage();
 		response = this.chatLLM(prompt);
+		
+		System.err.println("PROMPT: " + prompt);
+		System.err.println("response: " + response);
+		
 		boolean isRecommendationUnset = (response == null) || (response.isEmpty()) || (response.isBlank()) || (response.contains(UNSET) || (! response.contains(ESAICPrompts.getAck())));
 		if (! isRecommendationUnset ) {
 			String recs = "";
@@ -160,7 +165,7 @@ public abstract class AbstractESAICPrompter extends AbstractPrompter {
 //		headerProcessed = headerProcessed && response.contains(ESAICPrompts.getAck());
 	}
 
-	protected void loadESAIC_stepByStep() {
+	public void loadESAIC_stepByStep() {
 		this.loadedRecommendations.clear();
 		
 		String prompt = ESAICPrompts.getRecommendationLoadingHeaderWithAck();
