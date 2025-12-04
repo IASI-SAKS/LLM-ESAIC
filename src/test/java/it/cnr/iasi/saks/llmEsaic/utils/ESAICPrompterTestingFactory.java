@@ -1,6 +1,6 @@
 package it.cnr.iasi.saks.llmEsaic.utils;
 
-import it.cnr.iasi.saks.llmEsaic.AbstractESAICPrompter;
+import it.cnr.iasi.saks.llmEsaic.SimpleESAICPrompter;
 import it.cnr.iasi.saks.llmEsaic.impl.DummyESAICPrompter;
 import it.cnr.iasi.saks.llmEsaic.impl.ESAICCaseAnalyzer;
 

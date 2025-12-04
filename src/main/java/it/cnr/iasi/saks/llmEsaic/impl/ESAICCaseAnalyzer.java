@@ -23,13 +23,13 @@ import java.io.InputStream;
 
 import org.testcontainers.shaded.org.apache.commons.io.IOUtils;
 
-import it.cnr.iasi.saks.llmEsaic.AbstractESAICPrompter;
+import it.cnr.iasi.saks.llmEsaic.SimpleESAICPrompter;
 import it.cnr.iasi.saks.llmEsaic.prompts.CommonConstants;
 import it.cnr.iasi.saks.llmEsaic.prompts.ESAICPrompts;
 
 public class ESAICCaseAnalyzer {
 
-	private AbstractESAICPrompter esaicPrompter;
+	private SimpleESAICPrompter esaicPrompter;
 	
     protected static final String ESAIC_PATH = CommonConstants.getESAICDefaultPath();
 
@@ -44,10 +44,10 @@ public class ESAICCaseAnalyzer {
 	private String caseSuggestion;
 	
 	public ESAICCaseAnalyzer () {
-		this(new AbstractESAICPrompter());
+		this(new SimpleESAICPrompter());
 	}
 
-	public ESAICCaseAnalyzer (AbstractESAICPrompter esaicPrompter) {
+	public ESAICCaseAnalyzer (SimpleESAICPrompter esaicPrompter) {
 		this.esaicPrompter = esaicPrompter;
 		
 		if (! this.esaicPrompter.areRecomandationsProcessable()) {

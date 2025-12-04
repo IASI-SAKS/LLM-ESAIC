@@ -17,9 +17,9 @@
  */
 package it.cnr.iasi.saks.llmEsaic.impl;
 
-import it.cnr.iasi.saks.llmEsaic.AbstractESAICPrompter;
+import it.cnr.iasi.saks.llmEsaic.SimpleESAICPrompter;
 
-public class DummyESAICPrompter extends AbstractESAICPrompter {
+public class DummyESAICPrompter extends SimpleESAICPrompter {
 
 	public DummyESAICPrompter () {
 			this.loadESAIC();
@@ -33,7 +33,7 @@ public class DummyESAICPrompter extends AbstractESAICPrompter {
 	}
 	
 	public String queryRecommendationGrade(int picoNumber, int recNumber) {		
-		String response = AbstractESAICPrompter.UNSET;
+		String response = SimpleESAICPrompter.UNSET;
 		
 		if (this.isRecomandationLoaded(picoNumber, recNumber))
 		{		

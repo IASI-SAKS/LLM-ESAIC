@@ -33,7 +33,7 @@ import it.cnr.iasi.saks.llm.AbstractPrompter;
 import it.cnr.iasi.saks.llmEsaic.prompts.CommonConstants;
 import it.cnr.iasi.saks.llmEsaic.prompts.ESAICPrompts;
 
-public class AbstractESAICPrompter extends AbstractPrompter {
+public class SimpleESAICPrompter extends AbstractPrompter {
 	
     private static final int TOTAL_PICO = 12;
 
@@ -50,7 +50,7 @@ public class AbstractESAICPrompter extends AbstractPrompter {
 
     private Map<String, Boolean> loadedRecommendations;
 	
-    public AbstractESAICPrompter () {
+    public SimpleESAICPrompter () {
 		super();
 
 		String prompt = ESAICPrompts.getPreamble();
@@ -59,19 +59,19 @@ public class AbstractESAICPrompter extends AbstractPrompter {
 		this.loadedRecommendations = new HashMap<String, Boolean>();
 	}
 
-	public AbstractESAICPrompter (String url, String llmName, String version) {		
+	public SimpleESAICPrompter (String url, String llmName, String version) {		
 		super(url, llmName, version);
 
 		this.loadedRecommendations = new HashMap<String, Boolean>();
 	}
 	
-	public AbstractESAICPrompter (String url, String llmName) {		
+	public SimpleESAICPrompter (String url, String llmName) {		
 		super(url, llmName);
 		
 	    this.loadedRecommendations = new HashMap<String, Boolean>();
 	}
 
-	public AbstractESAICPrompter (ChatModel llm) {
+	public SimpleESAICPrompter (ChatModel llm) {
 	    super(llm);
 
 	    this.loadedRecommendations = new HashMap<String, Boolean>();
