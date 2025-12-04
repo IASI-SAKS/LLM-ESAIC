@@ -24,46 +24,59 @@ import java.io.InputStream;
 import org.testcontainers.shaded.org.apache.commons.io.IOUtils;
 
 import it.cnr.iasi.saks.llmEsaic.AbstractESAICPrompter;
+import it.cnr.iasi.saks.llmEsaic.prompts.CommonConstants;
 import it.cnr.iasi.saks.llmEsaic.prompts.ESAICPrompts;
 
-public class ESAICCaseAnalyzer extends AbstractESAICPrompter{
+public class ESAICCaseAnalyzer {
+
+	private AbstractESAICPrompter esaicPrompter;
+	
+    protected static final String ESAIC_PATH = CommonConstants.getESAICDefaultPath();
 
 	private static final String ESAIC_CASES_PATH = ESAIC_PATH + "/Cases";
     private static final String CASE_TAG = "_°°_";
 	private static final String CASE_FILENAME = "case"+CASE_TAG+".txt";
+
+	protected static final String UNSET = CommonConstants.getUNSET();
 
 	private String caseID;
 	private String caseDescription;
 	private String caseSuggestion;
 	
 	public ESAICCaseAnalyzer () {
-		if (! this.areRecomandationsProcessable()) {
-			this.loadESAIC();
+		this(new AbstractESAICPrompter());
+	}
+
+	public ESAICCaseAnalyzer (AbstractESAICPrompter esaicPrompter) {
+		this.esaicPrompter = esaicPrompter;
+		
+		if (! this.esaicPrompter.areRecomandationsProcessable()) {
+			this.esaicPrompter.loadESAIC();
 		}
 		
-		String response = this.chatLLM(ESAICPrompts.getCaseLoadingHeader());
+		String response = this.esaicPrompter.chatLLM(ESAICPrompts.getCaseLoadingHeader());
 		
-		this.caseID = AbstractESAICPrompter.UNSET;
-		this.caseDescription = AbstractESAICPrompter.UNSET;
-		this.caseSuggestion = AbstractESAICPrompter.UNSET;
+		this.caseID = UNSET;
+		this.caseDescription = UNSET;
+		this.caseSuggestion = UNSET;
 	}
 
 	public boolean isLoadedCaseValid () {
-		boolean caseIDFlag = (this.caseID != null) && (!this.caseID.isBlank()) && (!this.caseID.isEmpty()) && (!this.caseID.equalsIgnoreCase(AbstractESAICPrompter.UNSET));
-		boolean caseDescriptionFlag = (this.caseDescription != null) && (!this.caseDescription.isBlank()) && (!this.caseDescription.isEmpty()) && (!this.caseDescription.equalsIgnoreCase(AbstractESAICPrompter.UNSET));
+		boolean caseIDFlag = (this.caseID != null) && (!this.caseID.isBlank()) && (!this.caseID.isEmpty()) && (!this.caseID.equalsIgnoreCase(UNSET));
+		boolean caseDescriptionFlag = (this.caseDescription != null) && (!this.caseDescription.isBlank()) && (!this.caseDescription.isEmpty()) && (!this.caseDescription.equalsIgnoreCase(UNSET));
 		
 		return (caseIDFlag && caseDescriptionFlag);
 	}
 	
 	public boolean isSuggestionValid () {
-		boolean caseSuggestionFlag = (this.caseSuggestion != null) && (!this.caseSuggestion.isBlank()) && (!this.caseSuggestion.isEmpty()) && (!this.caseSuggestion.equalsIgnoreCase(AbstractESAICPrompter.UNSET));
+		boolean caseSuggestionFlag = (this.caseSuggestion != null) && (!this.caseSuggestion.isBlank()) && (!this.caseSuggestion.isEmpty()) && (!this.caseSuggestion.equalsIgnoreCase(UNSET));
 		
 		return (caseSuggestionFlag && this.isLoadedCaseValid());
 	}
 
 	public void loadCase (String caseID) {
 		this.caseID = caseID;
-		this.caseSuggestion = AbstractESAICPrompter.UNSET;
+		this.caseSuggestion = UNSET;
 		
 		InputStream fis = null;
 		String caseFileName = ESAIC_CASES_PATH + "/" + CASE_FILENAME.replace(CASE_TAG, caseID);
@@ -77,7 +90,7 @@ public class ESAICCaseAnalyzer extends AbstractESAICPrompter{
 				fis = classLoader.getResourceAsStream(caseFileName);
 			}
 
-		String data = AbstractESAICPrompter.UNSET;
+		String data = UNSET;
 		
 		try {
 			data = IOUtils.toString(fis, "UTF-8");
@@ -98,9 +111,9 @@ public class ESAICCaseAnalyzer extends AbstractESAICPrompter{
 		if (this.isLoadedCaseValid()) {	
 			String prompt = ESAICPrompts.getBeginOfInput() + "\n" + this.caseDescription + "\n" + ESAICPrompts.getEndOfInput();
 			
-			this.caseSuggestion = this.queryLLM(prompt);			
+			this.caseSuggestion = this.esaicPrompter.queryLLM(prompt);			
 		} else {
-			this.caseSuggestion = AbstractESAICPrompter.UNSET;
+			this.caseSuggestion = UNSET;
 		}
 	}
 	
