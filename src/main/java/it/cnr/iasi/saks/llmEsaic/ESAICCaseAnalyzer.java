@@ -15,7 +15,7 @@
  * along with LLM-ESAIC. If not, see <https://www.gnu.org/licenses/>
  *
  */
-package it.cnr.iasi.saks.llmEsaic.impl;
+package it.cnr.iasi.saks.llmEsaic;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,7 +23,6 @@ import java.io.InputStream;
 
 import org.testcontainers.shaded.org.apache.commons.io.IOUtils;
 
-import it.cnr.iasi.saks.llmEsaic.SimpleESAICPrompter;
 import it.cnr.iasi.saks.llmEsaic.prompts.CommonConstants;
 import it.cnr.iasi.saks.llmEsaic.prompts.ESAICPrompts;
 

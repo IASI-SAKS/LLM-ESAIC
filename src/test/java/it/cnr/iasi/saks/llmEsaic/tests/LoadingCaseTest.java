@@ -24,7 +24,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import it.cnr.iasi.saks.llmEsaic.impl.ESAICCaseAnalyzer;
+import it.cnr.iasi.saks.llmEsaic.ESAICCaseAnalyzer;
 import it.cnr.iasi.saks.llmEsaic.utils.ESAICPrompterTestingFactory;
 
 public class LoadingCaseTest {
