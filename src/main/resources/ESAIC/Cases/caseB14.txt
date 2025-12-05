@@ -4,6 +4,4 @@ SUBJECT: 75 anni, uomo, ASA III, candidato a ernioplastica inguinale.
 ANAMNESIS: Comorbidità con fibrillazione atriale, depressione. Terapia in corso con amiodarone e antidepressivo triciclico.
 EXAMINATIONS: ECG con QTc 510 ms.
 ANESTHESIOLOGICAL NOTE: rischio di torsioni di punta.
-DECISION: rinvio dell'intervento.
-MOTIVATION: rinvio, sospensione farmaci proaritmici e rivalutazione ECG.
 

@@ -4,6 +4,4 @@ SUBJECT: 60 anni, donna, ASA III, in programma per laparoscopia diagnostica.
 ANAMNESIS: Comorbidità con epatopatia HCV.
 EXAMINATIONS: INR 1.8, PT 17 s.
 ANESTHESIOLOGICAL NOTE: rischio emorragico.
-DECISION: rinvio dell'intervento.
-MOTIVATION: rinvio, correzione dei deficit (vitamina K, plasma) e rivalutazione.
 

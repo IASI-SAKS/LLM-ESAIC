@@ -4,6 +4,4 @@ SUBJECT: 59 anni, donna, ASA II, in programma per colecistectomia.
 ANAMNESIS: Rilevato soffio sistolico intenso, dispnea da sforzo.
 EXAMINATIONS: eco non ancora eseguito.
 ANESTHESIOLOGICAL NOTE: sospetta stenosi aortica severa.
-DECISION: rinvio dell'intervento.
-MOTIVATION: rinvio per completare iter cardiologico con ecocardiogramma.
 

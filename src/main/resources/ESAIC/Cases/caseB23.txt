@@ -4,6 +4,4 @@ SUBJECT: 55 anni, uomo, ASA III, in programma per protesi di ginocchio.
 ANAMNESIS: Comorbidità con obesità (BMI 38), russamento e sonnolenza diurna.
 EXAMINATIONS: Test STOP-BANG: 7/8.
 ANESTHESIOLOGICAL NOTE: sospetta OSA severa non diagnosticata, rischio aumentato di complicanze respiratorie post-operatorie.
-DECISION: rinvio dell'intervento.
-MOTIVATION: rinvio per valutazione pneumologica, eventuale polisonnografia e impostazione CPAP preoperatoria.
 

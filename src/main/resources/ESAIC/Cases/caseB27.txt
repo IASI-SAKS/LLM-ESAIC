@@ -4,6 +4,4 @@ SUBJECT: 60 anni, donna, ASA III, in programma per tiroidectomia.
 ANAMNESIS: Comorbidità con ipotiroidismo severo non trattato.
 EXAMINATIONS: TSH superiorie a 60 mU/L, FT4 molto basso.
 ANESTHESIOLOGICAL NOTE: rischio di ipotermia, bradicardia e instabilità emodinamica perioperatoria.
-DECISION: rinvio dell'intervento.
-MOTIVATION: rinvio per inizio e stabilizzazione della terapia sostitutiva tiroidea.
 

@@ -4,6 +4,4 @@ SUBJECT: 62 anni, uomo, ASA II, in programma per tiroidectomia totale.
 ANAMNESIS: None.
 EXAMINATIONS: PA 200/110 mmHg nonostante terapia.
 ANESTHESIOLOGICAL NOTE: rischio di stroke o instabilità emodinamica intraoperatoria.
-DECISION: rinvio dell'intervento.
-MOTIVATION: rinvio fino a ottimizzazione terapeutica e controllo pressorio inferiore a160/100 mmHg.
 

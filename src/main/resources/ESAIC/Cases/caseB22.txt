@@ -4,6 +4,4 @@ SUBJECT: 68 anni, donna, ASA III, in lista per colecistectomia laparoscopica.
 ANAMNESIS: Comorbidità con ipertensione ed obesità. Riporatata dispnea progressiva negli ultimi giorni, SatO2 91% in aria ambiente.
 EXAMINATIONS: BNP elevato, ECG con tachicardia sinusale, angio-TC sospetta per embolia polmonare.
 ANESTHESIOLOGICAL NOTE: sospetta patologia cardiopolmonare acuta.
-DECISION: rinvio dell'intervento.
-MOTIVATION: rinvio e completamento diagnostico (angio-TC, ecocardio, gestione internistica).
 

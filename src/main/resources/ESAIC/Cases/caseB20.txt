@@ -4,6 +4,4 @@ SUBJECT: 60 anni, uomo, ASA II, in programma per TURP.
 ANAMNESIS: None.
 EXAMINATIONS: urinocoltura positiva per Klebsiella pneumoniae.
 ANESTHESIOLOGICAL NOTE: rischio di sepsi perioperatoria.
-DECISION: rinvio dell'intervento.
-MOTIVATION: rinvio, terapia antibiotica mirata e conferma di urinocoltura negativa prima di procedere.
 

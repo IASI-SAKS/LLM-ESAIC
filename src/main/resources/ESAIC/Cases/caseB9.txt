@@ -4,6 +4,4 @@ SUBJECT: 66 anni, uomo, ASA III, candidato a TURP.
 ANAMNESIS: Comorbidità con ipertensione e TIA tre settimane prima.
 EXAMINATIONS: RMN encefalo: piccolo infarto lacunare recente.
 ANESTHESIOLOGICAL NOTE: rischio elevato di ictus perioperatorio.
-DECISION: rinvio dell'intervento.
-MOTIVATION: rinvio di almeno 3 mesi, rivalutazione neurologica e ottimizzazione terapia antitrombotica.
 
