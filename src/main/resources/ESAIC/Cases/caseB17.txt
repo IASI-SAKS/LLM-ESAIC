@@ -1,0 +1,9 @@
+CASE ID: B17
+CONTEXT: Paziente con recente infarto e stent.
+SUBJECT: 67 anni, uomo, ASA III, per ernioplastica elettiva.
+ANAMNESIS: Riportato NSTEMI 5 settimane prima, stent DES, DAPT in corso.
+EXAMINATIONS: None.
+ANESTHESIOLOGICAL NOTE: rischio di trombosi di stent se si interrompe antiaggregazione.
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio di almeno 3–6 mesi e rivalutazione cardiologica.
+

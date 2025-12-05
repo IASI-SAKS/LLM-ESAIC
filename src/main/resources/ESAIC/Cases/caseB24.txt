@@ -1,0 +1,9 @@
+CASE ID: B24
+CONTEXT: Paziente con ictus recente.
+SUBJECT: 74 anni, uomo, ASA III, candidato a colectomia elettiva.
+ANAMNESIS: Comorbidità con ipertensione e diabete. Riportato ictus ischemico 4 settimane prima con lieve emiparesi residua.
+EXAMINATIONS: None.
+ANESTHESIOLOGICAL NOTE: rischio elevato di nuovo evento cerebrovascolare.
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per almeno 3 mesi (meglio 6), rivalutazione neurologica e cardiologica.
+

@@ -1,0 +1,9 @@
+CASE ID: B16
+CONTEXT: Paziente con malattia di von Willebrand.
+SUBJECT: 40 anni, donna, ASA II, candidata a laparoscopia ginecologica.
+ANAMNESIS: None.
+EXAMINATIONS: PFA-100 allungato, vWF ridotto.
+ANESTHESIOLOGICAL NOTE: coagulopatia non corretta con conseguente rischio emorragico.
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio, consulto ematologico per terapia sostitutiva (DDAVP o concentrati vWF/FVIII) e pianificazione MDT.
+

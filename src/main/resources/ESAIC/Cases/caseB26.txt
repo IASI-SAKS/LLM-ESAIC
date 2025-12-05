@@ -1,0 +1,9 @@
+CASE ID: B26
+CONTEXT: Paziente con infezione dentaria attiva prima di artroprotesi.
+SUBJECT: 69 anni, donna, ASA II, candidata a protesi totale di ginocchio.
+ANAMNESIS: ascesso dentario in terapia antibiotica empirica.
+EXAMINATIONS: None.
+ANESTHESIOLOGICAL NOTE: focolaio infettivo attivo con rischio di seeding protesico.
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio finché l'infezione non sia risolta e la bonifica odontoiatrica completata.
+

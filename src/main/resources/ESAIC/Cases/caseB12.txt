@@ -1,0 +1,9 @@
+CASE ID: B12
+CONTEXT: Paziente malnutrito per chirurgia maggiore.
+SUBJECT: 74 anni, uomo, ASA III, in lista per gastrectomia.
+ANAMNESIS: Comorbidità con neoplasia gastrica e BMI 18.
+EXAMINATIONS: albumina 2.7 g/dl, linfociti ridotti.
+ANESTHESIOLOGICAL NOTE: stato nutrizionale compromesso con conseguente alto rischio di complicanze e scarsa guarigione.
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per avviare nutrizione enterale o immunonutrizione per 10–14 giorni.
+

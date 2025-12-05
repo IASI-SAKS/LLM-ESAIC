@@ -1,0 +1,9 @@
+CASE ID: B3
+CONTEXT: Paziente obeso in terapia con GLP-1 agonista.
+SUBJECT: 58 anni, donna, ASA II, in programma per sleeve gastrectomy.
+ANAMNESIS: Comorbidità con obesità di III grado ed ipertensione. Terapia settimanale in corso con semaglutide.
+EXAMINATIONS: vomito preoperatorio, ecografia gastrica con residuo solido.
+ANESTHESIOLOGICAL NOTE: rischio aumentato di aspirazione per rallentato svuotamento gastrico.
+DECISION: rinvio dell'intervento.
+MOTIVATION: intervento rinviato di 1–2 settimane, sospensione del GLP-1 agonista e dieta liquida nei giorni precedenti.
+

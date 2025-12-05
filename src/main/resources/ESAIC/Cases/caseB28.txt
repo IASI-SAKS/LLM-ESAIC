@@ -1,0 +1,9 @@
+CASE ID: B28
+CONTEXT: Paziente con chetoacidosi diabetica.
+SUBJECT: 58 anni, uomo, ASA III, candidato a laparotomia per diverticolite.
+ANAMNESIS: None.
+EXAMINATIONS: glicemia superiorie a 450 mg/dl, pH 7.18, chetonemia positiva.
+ANESTHESIOLOGICAL NOTE: DKA attiva, emergenza metabolica.
+DECISION: rinvio dell'intervento.
+MOTIVATION: intervento rinviato, correzione intensiva insulinica e idro-elettrolitica fino a stabilizzazione metabolica.
+

@@ -1,0 +1,9 @@
+CASE ID: B7
+CONTEXT: Paziente settico per protesi d'anca.
+SUBJECT: 70 anni, uomo, ASA III, in lista per protesi totale d'anca.
+ANAMNESIS: None.
+EXAMINATIONS: febbre 38.5°C, leucocitosi, PCR 24 mg/dl, emocolture positive per E. coli.
+ANESTHESIOLOGICAL NOTE: stato settico attivo con instabilità emodinamica.
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio fino a completa risoluzione dell'infezione e normalizzazione laboratoristica.
+

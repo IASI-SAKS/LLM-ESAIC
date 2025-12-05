@@ -1,0 +1,9 @@
+CASE ID: B29
+CONTEXT: Paziente con abuso cronico di alcol in astinenza.
+SUBJECT: 52 anni, uomo, ASA III, in lista per laparoscopia esplorativa.
+ANAMNESIS: Comorbidità con epatopatia e malnutrizione. Rilevati tremori, tachicardia, segni di astinenza.
+EXAMINATIONS: None.
+ANESTHESIOLOGICAL NOTE: rischio di delirium tremens e instabilità emodinamica perioperatoria.
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio, stabilizzazione e supplementazione vitaminica (tiamina), eventuale ricovero in ambiente protetto.
+
