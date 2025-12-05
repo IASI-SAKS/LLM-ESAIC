@@ -1,4 +1,4 @@
-CASE_ID: A1
+CASE ID: A1
 CONTEXT: Anticoagulante non sospeso (Coumadin)
 SUBJECT: uomo, 72 anni, ASA III, in programma per nefrectomia parziale.
 ANAMNESIS: fibrillazione atriale cronica in TAO con warfarin.
