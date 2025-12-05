@@ -1,0 +1,4 @@
+CASE ID: B7
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio fino a completa risoluzione dell'infezione e normalizzazione laboratoristica.
+

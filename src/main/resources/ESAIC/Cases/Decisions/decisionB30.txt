@@ -1,0 +1,4 @@
+CASE ID: B30
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per rivalutazione completa e aggiornamento documentazione clinica.
+

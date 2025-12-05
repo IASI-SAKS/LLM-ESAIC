@@ -1,0 +1,4 @@
+CASE ID: B6
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio dell'intervento si suggerisce terapia broncodilatatrice, steroidi, fisioterapia respiratoria, poi rivalutazione.
+

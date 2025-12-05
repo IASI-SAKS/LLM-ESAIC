@@ -1,0 +1,4 @@
+CASE ID: B22
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio e completamento diagnostico (angio-TC, ecocardio, gestione internistica).
+

@@ -1,0 +1,4 @@
+CASE ID: B18
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio, correzione dei deficit (vitamina K, plasma) e rivalutazione.
+

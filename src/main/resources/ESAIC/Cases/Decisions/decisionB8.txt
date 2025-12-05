@@ -1,0 +1,4 @@
+CASE ID: B8
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per dialisi urgente e riequilibrio metabolico.
+

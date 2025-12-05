@@ -1,0 +1,4 @@
+CASE ID: B9
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio di almeno 3 mesi, rivalutazione neurologica e ottimizzazione terapia antitrombotica.
+

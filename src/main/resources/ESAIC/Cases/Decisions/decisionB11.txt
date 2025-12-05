@@ -1,0 +1,4 @@
+CASE ID: B11
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio fino a completa guarigione clinica e negativizzazione del test.
+

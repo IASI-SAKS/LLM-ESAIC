@@ -1,0 +1,4 @@
+CASE ID: B25
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio fino a completamento test genetico o disponibilità garantita di dantrolene e team addestrato; pianificazione in centro attrezzato.
+

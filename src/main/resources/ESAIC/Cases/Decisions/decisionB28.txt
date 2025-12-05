@@ -1,0 +1,4 @@
+CASE ID: B28
+DECISION: rinvio dell'intervento.
+MOTIVATION: intervento rinviato, correzione intensiva insulinica e idro-elettrolitica fino a stabilizzazione metabolica.
+
