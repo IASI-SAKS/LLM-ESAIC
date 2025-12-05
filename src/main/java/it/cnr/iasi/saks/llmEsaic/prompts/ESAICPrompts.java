@@ -30,7 +30,7 @@ public class ESAICPrompts {
 	private final static String BEGIN_OF_ANSWER = "--ANSWER-BEGIN--";
 	private final static String END_OF_ANSWER = "--ANSWER-END--";
 
-	private static final String CASE_ID = "CASE";
+	private static final String CASE_ID = "CASE ID";
 	private static final String CASE_CONTEXT = "CONTEXT";
 	private static final String CASE_SUBJECT = "SUBJECT";
 	private static final String CASE_ANAMNESIS = "ANAMNESIS";
@@ -89,7 +89,7 @@ public class ESAICPrompts {
 			+ BEGIN_OF_ANSWER + ", and a line containing only the tag: " + END_OF_ANSWER + " ." 
 			+ "Each decision has to be structured as follows: "
 			+ CASE_DECISION + ": where you only report either : " + CASE_POSTPONE + ", or " + CASE_PROCEED + ". You report the former if the suggestion is to postpone the surgery, while the latter if the suggestion is to proceed with the surgery."
-			+ CASE_DECISION_EXPLAINATION + ": where you explain your suggestion. Note that your explaination has to take into account and explicitly cite one or more ESAIC Recommendation.";
+			+ CASE_DECISION_EXPLAINATION + ": where you explain your suggestion. Note that your explaination has to take into account and explicitly cite several ESAIC Recommendations.";
 
 	public static String getAckMessage() {
 		return "If this message is clear just reply: \""+ ACK + "\".";
