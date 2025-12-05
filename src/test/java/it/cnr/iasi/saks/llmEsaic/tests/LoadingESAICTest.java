@@ -59,15 +59,16 @@ public class LoadingESAICTest {
 
 
     @ParameterizedTest
-//    @CsvSource({"1,1,1C", "1,2,1B", "1,3,CPS", "1,4,CPS", "10,1,2B", "10,2,2C", "11,1,1C", "12,10,CPS", "12,11,CPS", "12,1,CPS", "12,2,CPS", "12,3,CPS", "12,4,CPS", "12,5,CPS", "12,6,CPS", "12,7,CPS", "12,8,CPS", "12,9,CPS", "2,1,CPS", "2,2,CPS", "3,1,2C", "3,2,2C", "3,3,1A", "3,4,1C", "3,5,1C", "4,1,2B", "4,2,2B", "5,1,1C", "5,2,1C", "5,3,CPS", "6,1,1C", "6,2,1A", "6,3,2C", "6,4,1C", "6,5,CPS", "6,6,1C", "7,1,1C", "7,2,2C", "8,1,2C", "8,2,1C", "8,3,1A", "8,4,2C", "8,5,2C", "8,6,2C", "8,7,2C", "8,8,2B", "8,9,1C", "9,1,1C", "9,2,1C", "9,3,1C"})
+////    @CsvSource({"1,1,1C", "1,2,1B", "1,3,CPS", "1,4,CPS", "10,1,2B", "10,2,2C", "11,1,1C", "12,10,CPS", "12,11,CPS", "12,1,CPS", "12,2,CPS", "12,3,CPS", "12,4,CPS", "12,5,CPS", "12,6,CPS", "12,7,CPS", "12,8,CPS", "12,9,CPS", "2,1,CPS", "2,2,CPS", "3,1,2C", "3,2,2C", "3,3,1A", "3,4,1C", "3,5,1C", "4,1,2B", "4,2,2B", "5,1,1C", "5,2,1C", "5,3,CPS", "6,1,1C", "6,2,1A", "6,3,2C", "6,4,1C", "6,5,CPS", "6,6,1C", "7,1,1C", "7,2,2C", "8,1,2C", "8,2,1C", "8,3,1A", "8,4,2C", "8,5,2C", "8,6,2C", "8,7,2C", "8,8,2B", "8,9,1C", "9,1,1C", "9,2,1C", "9,3,1C"})
     @CsvSource({"1,1,1C", "1,2,1B", "1,3,3A", "1,4,3A", "10,1,2B", "10,2,2C", "11,1,1C", "12,10,3A", "12,11,3A", "12,1,3A", "12,2,3A", "12,3,3A", "12,4,3A", "12,5,3A", "12,6,3A", "12,7,3A", "12,8,3A", "12,9,3A", "2,1,3A", "2,2,3A", "3,1,2C", "3,2,2C", "3,3,1A", "3,4,1C", "3,5,1C", "4,1,2B", "4,2,2B", "5,1,1C", "5,2,1C", "5,3,3A", "6,1,1C", "6,2,1A", "6,3,2C", "6,4,1C", "6,5,3A", "6,6,1C", "7,1,1C", "7,2,2C", "8,1,2C", "8,2,1C", "8,3,1A", "8,4,2C", "8,5,2C", "8,6,2C", "8,7,2C", "8,8,2B", "8,9,1C", "9,1,1C", "9,2,1C", "9,3,1C"})
-//    @CsvSource({"1,1,GRADE: 1C"})
+////@CsvSource({"1,1,1C"})
+//@CsvSource({"10,2,2C"})
     public void correctESAICGradesTest(int picoNumber, int recNumber, String expectedGrade) {
     	int max_iterations = 5;
     	
 		System.err.println("Processing ESAIC Recommendation: " + picoNumber + ", " + recNumber + " ...");
-    	String response = prompter.queryRecommendationGrade(picoNumber, recNumber);
-    	
+ 
+		String response = prompter.queryRecommendationGrade(picoNumber, recNumber);   	
     	try {
     		assertEquals(expectedGrade, response, "Pico: " + picoNumber +", Rec: " + recNumber );
     	} catch (AssertionFailedError e) {
@@ -81,13 +82,15 @@ public class LoadingESAICTest {
     	   			completed = true;
     	   		} catch (AssertionFailedError e1) {
     	   			counter ++;
-    	   			System.err.println("Failed processing ESAIC Recommendation: " + picoNumber + ", " + recNumber + ". Tentative " + counter + " of " + max_iterations);
+    	   			System.err.println("Failed processing ESAIC Recommendation: " + picoNumber + ", " + recNumber + ". Tentative " + counter + " of " + max_iterations
+    	   								+ "\n Expected: <" + expectedGrade + ">, but was:<" + response +">");
     	   			if (counter >= max_iterations) {    				
     	   				throw e1;
     	   			}
     	   		}
     	   	}	
-    	}	
+    	}
+    	
 		System.err.println("done ESAIC Recommendation: " + picoNumber + ", " + recNumber);
     }
 

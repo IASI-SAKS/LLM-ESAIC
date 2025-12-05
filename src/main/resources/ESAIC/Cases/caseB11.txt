@@ -1,0 +1,7 @@
+CASE ID: B11
+CONTEXT: Paziente sintomatico per COVID-19.
+SUBJECT: 45 anni, donna, ASA II, candidata a colecistectomia elettiva.
+ANAMNESIS: Rilevata febbre, tosse, test antigenico positivo.
+EXAMINATIONS: None.
+ANESTHESIOLOGICAL NOTE: rischio aumentato di complicanze respiratorie perioperatorie.
+

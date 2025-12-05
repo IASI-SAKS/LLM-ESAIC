@@ -1,0 +1,7 @@
+CASE ID: B6
+CONTEXT: Paziente con BPCO riacutizzata.
+SUBJECT: 68 anni, uomo, ASA III, candidato a lobectomia polmonare.
+ANAMNESIS: Comorbidità con BPCO severa.
+EXAMINATIONS: PaCO2 65 mmHg, FEV1 40%.
+ANESTHESIOLOGICAL NOTE: riacutizzazione broncopneumonica con rischio ventilatorio elevato.
+

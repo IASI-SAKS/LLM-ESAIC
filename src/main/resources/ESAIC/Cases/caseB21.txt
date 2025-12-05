@@ -1,0 +1,7 @@
+CASE ID: B21
+CONTEXT: Paziente con dolore toracico recente.
+SUBJECT: 70 anni, uomo, ASA III, candidato a resezione colica per neoplasia.
+ANAMNESIS: Comorbidità con ipertensione e diabete tipo 2. Riportato dolore toracico atipico negli ultimi due giorni.
+EXAMINATIONS: ECG con onde T invertite; troponina in aumento.
+ANESTHESIOLOGICAL NOTE: possibile sindrome coronarica acuta non stabilizzata.
+

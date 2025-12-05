@@ -1,0 +1,4 @@
+CASE ID: B1
+DECISION: rinvio dell'intervento.
+MOTIVATION: Occorre sospendere il warfarin 5 giorni prima, valutare il rischio tromboembolico e impostare eventualmente bridging con EBPM; rivalutazione con INR inferiore a 1,5 prima di procedere.
+

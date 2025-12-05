@@ -1,4 +1,4 @@
-CASE_ID: A2
+CASE ID: A2
 CONTEXT: Anemia preoperatoria
 SUBJECT: donna, 65 anni, ASA II, candidata a resezione gastrica per neoplasia (non urgente/emergente, ma ad alto rischio emorragico).
 ANAMNESIS: None.

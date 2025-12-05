@@ -1,0 +1,7 @@
+CASE ID: B8
+CONTEXT: Paziente con scompenso metabolico in IRC.
+SUBJECT: 65 anni, uomo, ASA IV, in programma per resezione intestinale.
+ANAMNESIS: Comorbidità con insufficienza renale terminale.
+EXAMINATIONS: K+ 6,4 mmol/L, pH 7,25, creatinina 8 mg/dl.
+ANESTHESIOLOGICAL NOTE: acidosi e iperkaliemia con conseguente rischio aritmico perioperatorio.
+

@@ -1,0 +1,3 @@
+CASE ID: A2
+DECISION: rinvio dell'intervento.
+MOTIVATION: Avvio di terapia, ottimizzazione nutrizionale, nuova valutazione a stabilizzazione emoglobinica.

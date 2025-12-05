@@ -1,0 +1,4 @@
+CASE ID: B3
+DECISION: rinvio dell'intervento.
+MOTIVATION: intervento rinviato di 1–2 settimane, sospensione del GLP-1 agonista e dieta liquida nei giorni precedenti.
+

@@ -1,0 +1,7 @@
+CASE ID: B20
+CONTEXT: Paziente con infezione urinaria in chirurgia urologica.
+SUBJECT: 60 anni, uomo, ASA II, in programma per TURP.
+ANAMNESIS: None.
+EXAMINATIONS: urinocoltura positiva per Klebsiella pneumoniae.
+ANESTHESIOLOGICAL NOTE: rischio di sepsi perioperatoria.
+

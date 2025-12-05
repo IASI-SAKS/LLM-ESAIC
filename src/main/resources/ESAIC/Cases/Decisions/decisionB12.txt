@@ -1,0 +1,4 @@
+CASE ID: B12
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per avviare nutrizione enterale o immunonutrizione per 10–14 giorni.
+

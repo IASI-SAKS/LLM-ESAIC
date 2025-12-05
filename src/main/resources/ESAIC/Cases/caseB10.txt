@@ -1,0 +1,7 @@
+CASE ID: B10
+CONTEXT: Paziente con ipertensione severa non controllata.
+SUBJECT: 62 anni, uomo, ASA II, in programma per tiroidectomia totale.
+ANAMNESIS: None.
+EXAMINATIONS: PA 200/110 mmHg nonostante terapia.
+ANESTHESIOLOGICAL NOTE: rischio di stroke o instabilità emodinamica intraoperatoria.
+

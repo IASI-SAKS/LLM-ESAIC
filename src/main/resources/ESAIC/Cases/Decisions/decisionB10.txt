@@ -1,0 +1,4 @@
+CASE ID: B10
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio fino a ottimizzazione terapeutica e controllo pressorio inferiore a160/100 mmHg.
+

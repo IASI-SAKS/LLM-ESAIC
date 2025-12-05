@@ -1,0 +1,7 @@
+CASE ID: B5
+CONTEXT: Paziente in scompenso cardiaco acuto.
+SUBJECT: 69 anni, donna, ASA IV, in programma per isteroannessectomia per neoplasia ovarica.
+ANAMNESIS: Comorbidità con cardiomiopatia dilatativa (FE 25%).
+EXAMINATIONS: BNP 1800 pg/mL, eco con FE severamente ridotta.
+ANESTHESIOLOGICAL NOTE: elevato rischio di shock cardiogeno intraoperatorio.
+

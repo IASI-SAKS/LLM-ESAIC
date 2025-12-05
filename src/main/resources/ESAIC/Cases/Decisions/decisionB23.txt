@@ -1,0 +1,4 @@
+CASE ID: B23
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per valutazione pneumologica, eventuale polisonnografia e impostazione CPAP preoperatoria.
+

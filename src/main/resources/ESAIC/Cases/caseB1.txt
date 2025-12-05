@@ -1,0 +1,7 @@
+CASE ID: B1
+CONTEXT: Paziente in TAO non sospesa.
+SUBJECT: 72 anni, uomo, ASA III, in programma per nefrectomia parziale per neoplasia renale.
+ANAMNESIS: Comorbidità con fibrillazione atriale cronica in terapia con warfarin.
+EXAMINATIONS: INR 2,6.
+ANESTHESIOLOGICAL NOTE: la chirurgia presenta alto rischio emorragico. L'INR non è nei range di sicurezza e non è stato predisposto un eventuale bridging terapeutico.
+

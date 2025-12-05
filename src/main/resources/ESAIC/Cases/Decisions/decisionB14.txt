@@ -1,0 +1,4 @@
+CASE ID: B14
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio, sospensione farmaci proaritmici e rivalutazione ECG.
+

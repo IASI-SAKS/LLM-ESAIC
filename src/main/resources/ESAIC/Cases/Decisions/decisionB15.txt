@@ -1,0 +1,4 @@
+CASE ID: B15
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per percorso di preabilitazione fisica e nutrizionale.
+

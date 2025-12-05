@@ -1,0 +1,4 @@
+CASE ID: B19
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per almeno 72 ore e test tossicologico negativo.
+

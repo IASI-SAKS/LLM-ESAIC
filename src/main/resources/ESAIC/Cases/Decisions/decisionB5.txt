@@ -1,0 +1,4 @@
+CASE ID: B5
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio fino a ottimizzazione cardiologica e stabilizzazione clinica.
+

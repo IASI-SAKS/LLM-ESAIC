@@ -1,0 +1,4 @@
+CASE ID: B13
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per completare iter cardiologico con ecocardiogramma.
+

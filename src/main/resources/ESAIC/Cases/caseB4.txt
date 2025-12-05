@@ -1,0 +1,7 @@
+CASE ID: B4
+CONTEXT: Paziente con anemia preoperatoria.
+SUBJECT: 65 anni, donna, ASA III, candidata a colectomia sinistra per neoplasia.
+ANAMNESIS: None.
+EXAMINATIONS: Hb 8,0 g/dl, ferritina 12 μg/L.
+ANESTHESIOLOGICAL NOTE: anemia sideropenica significativa con conseguente rischio trasfusionale e complicanze postoperatorie.
+

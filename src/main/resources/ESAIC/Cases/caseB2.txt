@@ -1,0 +1,7 @@
+CASE ID: B2
+CONTEXT: Paziente diabetico in terapia con SGLT2-inibitore.
+SUBJECT: 64 anni, uomo, ASA II, candidato a colecistectomia laparoscopica.
+ANAMNESIS: Comorbidità con diabete tipo 2 trattato con empagliflozin.
+EXAMINATIONS: glicemia 180 mg/dl, pH 7,32, lieve chetonemia.
+ANESTHESIOLOGICAL NOTE: non è stata sospesa la terapia con SGLT2-i, con rischio di chetoacidosi euglicemica perioperatoria.
+

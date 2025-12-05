@@ -1,4 +1,4 @@
-CASE_ID: A3
+CASE ID: A3
 CONTEXT: Funzione respiratoria gravemente compromessa
 SUBJECT: uomo, 68 anni, ASA III, ex-fumatore, programmato per bypass aorto-coronarico (CABG) elettivo.
 ANAMNESIS: None. 

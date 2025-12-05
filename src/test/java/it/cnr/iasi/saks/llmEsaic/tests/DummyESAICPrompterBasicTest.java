@@ -41,7 +41,7 @@ public class DummyESAICPrompterBasicTest {
     	int h1 = prompter.currentHistorySize();
     	assertEquals(h0+2, h1);
     	
-    	// assuming the PROMPTER gave the wrong answer, repeating the last prompt (which should be unset) and history must be unchanged
+    	// assuming the PROMPTER gave the wrong answer, repeating the last query on a recommendation's grade (which should result unset) and history must be unchanged
     	answer = prompter.queryRecommendationGrade_LastAnswerNotCorrect("I won't call you Guybrush Threepwood");
     	assertTrue(answer.contains(CommonConstants.getUNSET()));
     	int h2 = prompter.currentHistorySize();

@@ -1,0 +1,4 @@
+CASE ID: B20
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio, terapia antibiotica mirata e conferma di urinocoltura negativa prima di procedere.
+

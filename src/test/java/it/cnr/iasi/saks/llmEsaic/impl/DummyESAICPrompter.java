@@ -17,6 +17,7 @@
  */
 package it.cnr.iasi.saks.llmEsaic.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dev.langchain4j.data.message.ChatMessage;
@@ -24,11 +25,13 @@ import it.cnr.iasi.saks.llmEsaic.SimpleESAICPrompter;
 
 public class DummyESAICPrompter extends SimpleESAICPrompter {
 
-	private String lastPrompt;
+	private String lastProcessedRecID;
+	private List<String> pastWrongAnswers;
 	
 	public DummyESAICPrompter () {
 			this.loadESAIC();
-			this.lastPrompt = null;
+			this.lastProcessedRecID = null;
+			this.pastWrongAnswers = null;
 	}
 	
 	public boolean loadESAIC(int picoNumber, int recNumber) {
@@ -44,10 +47,9 @@ public class DummyESAICPrompter extends SimpleESAICPrompter {
 		if (this.isRecomandationLoaded(picoNumber, recNumber))
 		{		
 			String recID = this.computeRecommendationID(picoNumber, recNumber);
-//			String prompt = "Return the grade of the ESAIC recommendation: " + recID + "? Your answer must follow the format: \"GRADE: R\", where R is the rank of " + recID + ". "; 
-//			String prompt = "Return the grade of the ESAIC recommendation: " + recID + "? Your answer must start with the keyword: \"GRADE:\""; 
 			String prompt = "Which is the severity index of the ESAIC recommendation: " + recID + "? Your answer must start with the keyword: \""+ recID + " GRADE:\""; 
-			this.lastPrompt = prompt;
+			this.lastProcessedRecID = recID;
+			this.pastWrongAnswers = new ArrayList<String>();
 			
 			response = this.queryLLM(prompt);
 			response = this.clearResponse(response);
@@ -59,15 +61,20 @@ public class DummyESAICPrompter extends SimpleESAICPrompter {
 	public String queryRecommendationGrade_LastAnswerNotCorrect(String wrongAnswer) {
 		String response = SimpleESAICPrompter.UNSET;
 		
-		if (this.lastPrompt != null) {
+//		if ((this.lastPrompt != null) && (this.lastProcessedRecID != null)) {
+		if (this.lastProcessedRecID != null) {
 			List<ChatMessage> backupHistory = this.fetchHistory();
+			
+			this.pastWrongAnswers.add(wrongAnswer);
+			String promptHeader = "";
+			for (String pastWrongAnswer : this.pastWrongAnswers) {
+				promptHeader = promptHeader + this.lastProcessedRecID + " does not have severity index: " + pastWrongAnswer + ".\n";				
+			}
 
-			String prompt = "Your last answer was not correct: \n " 
-					+ " * FORMER PROMPT:" + this.lastPrompt + "\".\n "
-					+ " * YOUR WRONG ANSWER: "+ wrongAnswer+ ".\n"
-					+ "Try to give a different answer; please replay to this prompt with: ACK.";			
+			String prompt = promptHeader + "Which is the severity index of the ESAIC recommendation: " + this.lastProcessedRecID
+					+ "? Your answer must start with the keyword: \""+ this.lastProcessedRecID + " GRADE:\""; 
+
 			response = this.chatLLM(prompt);
-			response = this.chatLLM(this.lastPrompt);
 			response = this.clearResponse(response);
 			this.configureHistory(backupHistory);
 		}

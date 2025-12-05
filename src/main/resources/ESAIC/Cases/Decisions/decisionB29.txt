@@ -1,0 +1,4 @@
+CASE ID: B29
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio, stabilizzazione e supplementazione vitaminica (tiamina), eventuale ricovero in ambiente protetto.
+

@@ -1,0 +1,7 @@
+CASE ID: B25
+CONTEXT: Paziente con sospetta ipertermia maligna familiare.
+SUBJECT: 37 anni, uomo, ASA I, in lista per ernia inguinale.
+ANAMNESIS: cugino deceduto per ipertermia maligna intraoperatoria.
+EXAMINATIONS: None.
+ANESTHESIOLOGICAL NOTE: rischio genetico non definito, nessun test eseguito.
+

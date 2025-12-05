@@ -1,0 +1,7 @@
+CASE ID: B19
+CONTEXT: Paziente con sospetto abuso di cocaina.
+SUBJECT: 42 anni, uomo, ASA II, candidato a settoplastica.
+ANAMNESIS: Ammissione uso cocaina il giorno prima.
+EXAMINATIONS: tachicardia 120 bpm, PA 170/100 mmHg.
+ANESTHESIOLOGICAL NOTE: rischio aritmico e ipertensivo acuto.
+

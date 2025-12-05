@@ -1,4 +1,4 @@
-CASE_ID: A4
+CASE ID: A4
 CONTEXT: Vie aeree difficili
 SUBJECT: donna, 54 anni, ASA II, candidata a tiroidectomia totale.
 ANAMNESIS: None

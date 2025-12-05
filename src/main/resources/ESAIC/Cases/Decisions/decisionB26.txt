@@ -1,0 +1,4 @@
+CASE ID: B26
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio finché l'infezione non sia risolta e la bonifica odontoiatrica completata.
+

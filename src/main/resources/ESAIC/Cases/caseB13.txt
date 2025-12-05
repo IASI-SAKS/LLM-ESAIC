@@ -1,0 +1,7 @@
+CASE ID: B13
+CONTEXT: Paziente con sospetta stenosi aortica.
+SUBJECT: 59 anni, donna, ASA II, in programma per colecistectomia.
+ANAMNESIS: Rilevato soffio sistolico intenso, dispnea da sforzo.
+EXAMINATIONS: eco non ancora eseguito.
+ANESTHESIOLOGICAL NOTE: sospetta stenosi aortica severa.
+

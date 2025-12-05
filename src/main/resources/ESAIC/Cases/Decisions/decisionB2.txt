@@ -1,0 +1,4 @@
+CASE ID: B2
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio dell'intervento per sospensione del farmaco almeno 3–4 giorni e ottimizzazione metabolica.
+

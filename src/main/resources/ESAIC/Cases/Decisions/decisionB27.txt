@@ -1,0 +1,4 @@
+CASE ID: B27
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per inizio e stabilizzazione della terapia sostitutiva tiroidea.
+

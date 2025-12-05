@@ -1,0 +1,4 @@
+CASE ID: B16
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio, consulto ematologico per terapia sostitutiva (DDAVP o concentrati vWF/FVIII) e pianificazione MDT.
+

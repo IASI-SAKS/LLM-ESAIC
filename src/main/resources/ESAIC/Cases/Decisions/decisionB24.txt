@@ -1,0 +1,4 @@
+CASE ID: B24
+DECISION: rinvio dell'intervento.
+MOTIVATION: rinvio per almeno 3 mesi (meglio 6), rivalutazione neurologica e cardiologica.
+
