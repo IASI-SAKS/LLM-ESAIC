@@ -37,7 +37,7 @@ public class LoadingCaseTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"A1,true", "Z99,false"})
+    @CsvSource({"A1,true", "B14,true", "Z99,false"})
 	public void loadCasesTest(String caseID, boolean expected) {
     	System.err.println("Processing caseID: " + caseID + " ... ");
     	prompter.loadCase(caseID);    	
@@ -47,7 +47,18 @@ public class LoadingCaseTest {
     }
 	
     @ParameterizedTest
-    @CsvSource({"A1", "A2", "A3", "A4"})
+//    @CsvSource({"A1", "A2", "A3", "A4"})
+//    @CsvSource({"B10", "B11", "B12"})
+//    @CsvSource({"B13", "B14", "B15"})
+//    @CsvSource({"B16", "B17", "B18"})
+//    @CsvSource({"B19", "B1", "B20"})
+//    @CsvSource({"B21", "B22", "B23"})
+//    @CsvSource({"B24", "B25", "B26"})
+//    @CsvSource({"B27", "B28", "B29"})
+//    @CsvSource({"B2", "B30", "B3"})
+//    @CsvSource({"B4", "B5", "B6"})
+//    @CsvSource({"B7", "B8", "B9"})
+    @CsvSource({"A1", "B14"})
     public void processCasesWithoutAssessingSuggestionsTest(String caseID) {    	
     	System.err.println("Processing caseID: " + caseID + " ... ");
     	prompter.loadCase(caseID);
