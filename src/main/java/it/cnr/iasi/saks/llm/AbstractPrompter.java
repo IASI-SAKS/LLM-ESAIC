@@ -33,8 +33,21 @@ public abstract class AbstractPrompter {
 	protected String lastResponse;
  
 	private static final String OLLAMA_BASE_URL = "http://localhost:11434";
+// *****************************************************
+// *****************************************************
     private static final String LLM_NAME = "llama3.2";
     private static final String LLM_VERSION = "latest";
+// *****************************************************
+//	  private static final String LLM_NAME = "Almawave/Velvet";
+//    private static final String LLM_VERSION = "latest";
+// *****************************************************
+//    private static final String LLM_NAME = "jobautomation/OpenEuroLLM-Italian";
+//    private static final String LLM_VERSION = "latest";    
+// *****************************************************
+//    private static final String LLM_NAME = "meditron";
+//    private static final String LLM_VERSION = "latest";    
+// *****************************************************
+// *****************************************************
 //    private static final double LLM_TEMPERATURE = 0.8;
     private static final double LLM_TEMPERATURE = 0.5;
 //    private static final double LLM_TEMPERATURE = 0.0;
@@ -60,7 +73,7 @@ public abstract class AbstractPrompter {
 		                       .timeout(Duration.ofSeconds(LLM_TIMEOUT))
 		                       .build();
 
-	    this.chatMessageHistory = new ArrayList<ChatMessage>();	    
+	    this.chatMessageHistory = new ArrayList<ChatMessage>();	 
 	}
 
 	public AbstractPrompter (ChatModel llm) {
