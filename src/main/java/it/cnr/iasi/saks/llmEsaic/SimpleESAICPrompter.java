@@ -160,8 +160,10 @@ public class SimpleESAICPrompter extends AbstractPrompter {
 			System.err.println("ESAIC Recommendations have not been processed as expected. Expected errors during the interactions");
 		}
 		
+		System.err.println("Loading grade descriptions ... ");
 		prompt = ESAICPrompts.getGradeDescriptionsHeaderWithAck();
 		response = this.chatLLM(prompt);
+		System.err.println("... done");
 //		headerProcessed = headerProcessed && response.contains(ESAICPrompts.getAck());
 	}
 
