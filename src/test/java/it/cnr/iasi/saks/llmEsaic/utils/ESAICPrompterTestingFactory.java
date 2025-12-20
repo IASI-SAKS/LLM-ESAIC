@@ -18,6 +18,7 @@
 package it.cnr.iasi.saks.llmEsaic.utils;
 
 import it.cnr.iasi.saks.llmEsaic.ESAICCaseAnalyzer;
+import it.cnr.iasi.saks.llmEsaic.ESAICSmartCaseAnalyzer;
 import it.cnr.iasi.saks.llmEsaic.impl.DummyESAICPrompter;
 
 public class ESAICPrompterTestingFactory {
@@ -26,10 +27,12 @@ public class ESAICPrompterTestingFactory {
 
 	private DummyESAICPrompter testableESAIC;
 	private ESAICCaseAnalyzer caseAnalyzer;
+	private ESAICSmartCaseAnalyzer smartCaseAnalyzer;
 	
 	private ESAICPrompterTestingFactory() {
 		this.testableESAIC =  new DummyESAICPrompter();
 		this.caseAnalyzer = new ESAICCaseAnalyzer(this.testableESAIC);
+		this.smartCaseAnalyzer = new ESAICSmartCaseAnalyzer(this.testableESAIC);
 	}
 	
 	public synchronized static ESAICPrompterTestingFactory getInstance() {
@@ -47,6 +50,10 @@ public class ESAICPrompterTestingFactory {
 		return this.caseAnalyzer;
 	}
 
+	public ESAICSmartCaseAnalyzer getESAICSmartCaseAnalyzer() {
+		return this.smartCaseAnalyzer;
+	}
+
 	public DummyESAICPrompter getFreshDummyPrompter() {
 		DummyESAICPrompter d = new DummyESAICPrompter();
 		return d;
@@ -56,6 +63,13 @@ public class ESAICPrompterTestingFactory {
 		DummyESAICPrompter freshESAICPrompter = new DummyESAICPrompter();		
 
 		ESAICCaseAnalyzer a = new ESAICCaseAnalyzer(freshESAICPrompter);
+		return a;
+	}
+
+	public ESAICCaseAnalyzer getFreshESAICSmartCaseAnalyzer() {
+		DummyESAICPrompter freshESAICPrompter = new DummyESAICPrompter();		
+
+		ESAICSmartCaseAnalyzer a = new ESAICSmartCaseAnalyzer(freshESAICPrompter);
 		return a;
 	}
 }
