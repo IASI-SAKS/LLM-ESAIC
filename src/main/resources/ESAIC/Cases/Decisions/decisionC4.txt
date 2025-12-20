@@ -1,0 +1,4 @@
+CASE ID: C4
+DECISION: Procedere all'intervento.
+MOTIVATION: Il rischio di rottura imminente dell'aneurisma supera i rischi legati alla fragilità del paziente. L'approccio endovascolare riduce significativamente lo stress emodinamico rispetto alla chirurgia a cielo aperto.
+

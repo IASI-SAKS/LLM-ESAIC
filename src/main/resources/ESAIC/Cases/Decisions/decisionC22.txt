@@ -1,0 +1,4 @@
+CASE ID: C22
+DECISION: Procedere all'intervento immediato.
+MOTIVATION: Sanguinamento intra-addominale attivo non altrimenti controllabile. Somministrazione simultanea di emoderivati e concentrati di Fattore vW associati ad acido tranexamico.
+

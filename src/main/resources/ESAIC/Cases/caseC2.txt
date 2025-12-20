@@ -1,0 +1,6 @@
+CASE ID: C2
+CONTEXT: Ortopedia - Protesi d'anca.
+SUBJECT: Uomo, 78 anni.
+ANAMNESIS: Cardiopatia ischemica con stent posizionato 5 anni fa, BPCO moderata e Obesità Classe II.
+EXAMINATIONS: Frazione d'eiezione (FE) 45%, Spirometria con FEV1 al 60%, BMI 36.
+ANESTHESIOLOGICAL NOTE: Classe ASA III. Il paziente presenta un elevato rischio respiratorio post-operatorio.

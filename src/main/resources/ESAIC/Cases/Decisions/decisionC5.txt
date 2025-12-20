@@ -1,0 +1,4 @@
+CASE ID: C5
+DECISION: Procedere all'intervento.
+MOTIVATION: Patologie croniche ben controllate farmacologicamente. Le malattie autoimmuni sistemiche non controindicano la chirurgia se non sono in fase di riacutizzazione acuta.
+

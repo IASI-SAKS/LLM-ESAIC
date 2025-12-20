@@ -1,0 +1,4 @@
+CASE ID: C19
+DECISION: Procedere all'intervento.
+MOTIVATION: Patologia in fase quiescente che permette un approccio sicuro. L'anestesia spinale non interferisce con la placca neuromuscolare, rendendola ideale per i miastenici.
+

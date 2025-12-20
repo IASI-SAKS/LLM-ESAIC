@@ -1,0 +1,6 @@
+CASE ID: C4
+CONTEXT: Chirurgia Vascolare - Riparazione Aneurisma Addominale (EVAR).
+SUBJECT: Uomo, 82 anni.
+ANAMNESIS: Insufficienza Cardiaca Cronica, Insufficienza Renale Stadio IV e Anemia cronica.
+EXAMINATIONS: NT-proBNP elevato, Emoglobina 10.2 g/dL, GFR 40 ml/min.
+ANESTHESIOLOGICAL NOTE: Classe ASA IV. Si opta per una procedura mini-invasiva endovascolare.

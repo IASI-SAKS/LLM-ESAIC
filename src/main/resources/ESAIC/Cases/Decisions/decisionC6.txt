@@ -1,0 +1,4 @@
+CASE ID: C6
+DECISION: Procedere all'intervento.
+MOTIVATION: Stabilità cardiaca documentata oltre i 6 mesi dall'evento acuto. L'anestesia locale associata a una sedazione monitorata (MAC) rappresenta la scelta più sicura.
+

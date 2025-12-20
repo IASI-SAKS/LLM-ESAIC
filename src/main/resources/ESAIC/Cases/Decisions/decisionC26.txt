@@ -1,0 +1,4 @@
+CASE ID: C26
+DECISION: Procedere all'intervento.
+MOTIVATION: Neoplasia gastrica complicata da sanguinamento cronico. Utilizzo di monitoraggio emodinamico invasivo e infusione profilattica di concentrato di AT III.
+

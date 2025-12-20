@@ -1,0 +1,4 @@
+CASE ID: C11
+DECISION: Procedere all'intervento.
+MOTIVATION: Patologia oncologica stenosante; il beneficio dell'asportazione supera i rischi cognitivi. Si applica il protocollo ERAS (Enhanced Recovery After Surgery) per favorire la mobilizzazione precoce.
+

@@ -1,0 +1,4 @@
+CASE ID: C18
+DECISION: Procedere all'intervento.
+MOTIVATION: Presenza di lesione espansiva endocranica sintomatica. La gestione della pressione intracranica è l'obiettivo primario, insieme alla prevenzione della crisi surrenalica.
+

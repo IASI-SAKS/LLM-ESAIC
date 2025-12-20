@@ -1,0 +1,6 @@
+CASE ID: C12
+CONTEXT: Chirurgia Toracica - Lobectomia polmonare.
+SUBJECT: Uomo, 67 anni.
+ANAMNESIS: Carcinoma polmonare, BPCO stadio III e Cardiopatia ipertensiva.
+EXAMINATIONS: FEV1 55%, DLCO 50%, Ecocardiogramma con FE 50%.
+ANESTHESIOLOGICAL NOTE: Valutazione accurata della riserva funzionale polmonare residua post-resezionale.

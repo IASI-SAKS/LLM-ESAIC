@@ -1,0 +1,6 @@
+CASE ID: C28
+CONTEXT: Chirurgia Addominale - Occlusione intestinale in emergenza.
+SUBJECT: Uomo, 77 anni.
+ANAMNESIS: Insufficienza Renale Terminale in emodialisi e Cardiopatia ischemica cronica.
+EXAMINATIONS: Potassio 5.8 mEq/L, Creatinina 6.5 mg/dL.
+ANESTHESIOLOGICAL NOTE: Rischio critico di iperpotassiemia intraoperatoria e sovraccarico idrico acuto.

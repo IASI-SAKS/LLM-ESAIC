@@ -1,0 +1,6 @@
+CASE ID: C15
+CONTEXT: Chirurgia Plastica - Ricostruzione mammaria.
+SUBJECT: Donna, 48 anni.
+ANAMNESIS: Pregressa chemioterapia con antracicline, Ipertensione e Depressione in terapia con SSRI.
+EXAMINATIONS: Ecocardio con FE 52% (lieve tossicità cardiaca residua), Elettroliti bilanciati.
+ANESTHESIOLOGICAL NOTE: Monitoraggio attento della gittata e valutazione delle interazioni tra SSRI e farmaci anestetici.

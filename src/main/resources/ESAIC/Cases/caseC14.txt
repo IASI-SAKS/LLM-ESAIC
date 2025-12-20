@@ -1,0 +1,6 @@
+CASE ID: C14
+CONTEXT: Ortopedia - Revisione protesi d'anca.
+SUBJECT: Donna, 81 anni.
+ANAMNESIS: Osteoporosi severa, Malattia renale cronica e Ipertiroidismo controllato.
+EXAMINATIONS: TSH 1.5 mU/L, Creatinina 1.6 mg/dL, Calcemia nella norma.
+ANESTHESIOLOGICAL NOTE: Attenzione particolare al posizionamento per il rischio di fratture da decubito o manovra.

@@ -1,0 +1,4 @@
+CASE ID: C7
+DECISION: Procedere all'intervento.
+MOTIVATION: Asma controllato e piano analgesico alternativo validato. L'allergia ai FANS richiede l'uso di farmaci alternativi e anestetici locali per il controllo del dolore post-operatorio.
+

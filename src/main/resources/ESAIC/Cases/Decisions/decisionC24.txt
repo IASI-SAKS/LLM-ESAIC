@@ -1,0 +1,4 @@
+CASE ID: C24
+DECISION: Procedere all'intervento.
+MOTIVATION: Ernia inguinale sintomatica con elevato rischio di strozzamento. Si garantisce una tecnica chirurgica meticolosa e la pronta disponibilità di emoderivati specifici.
+

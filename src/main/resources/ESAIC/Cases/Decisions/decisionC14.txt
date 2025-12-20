@@ -1,0 +1,4 @@
+CASE ID: C14
+DECISION: Procedere all'intervento.
+MOTIVATION: Dolore cronico invalidante e totale impotenza funzionale dell'arto. La stabilità biochimica della tiroide permette di escludere il rischio di tempesta tiroidea intraoperatoria.
+

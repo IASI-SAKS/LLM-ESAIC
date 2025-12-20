@@ -1,0 +1,6 @@
+CASE ID: C9
+CONTEXT: Chirurgia Generale - Appendicectomia laparoscopica.
+SUBJECT: Uomo, 40 anni.
+ANAMNESIS: Sieropositività HIV+, Epatite C pregressa trattata e fumatore attivo.
+EXAMINATIONS: Conta CD4 pari a 600/mm³, Carica virale non rilevabile, Transaminasi normali.
+ANESTHESIOLOGICAL NOTE: Applicazione delle precauzioni standard; il paziente è considerato immunologicamente competente.

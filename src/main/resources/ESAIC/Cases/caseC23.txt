@@ -1,0 +1,6 @@
+CASE ID: C23
+CONTEXT: Chirurgia Generale - Colecistectomia.
+SUBJECT: Donna, 50 anni.
+ANAMNESIS: Sclerosi Multipla forma remittente-ricorrente e Ipertensione.
+EXAMINATIONS: Deficit motorio stabilizzato all'arto inferiore sinistro.
+ANESTHESIOLOGICAL NOTE: Obiettivo prioritario è evitare aumenti della temperatura corporea (effetto Uhthoff).

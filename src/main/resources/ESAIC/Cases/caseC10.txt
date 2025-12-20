@@ -1,0 +1,6 @@
+CASE ID: C10
+CONTEXT: Ginecologia - Isterectomia.
+SUBJECT: Donna, 52 anni.
+ANAMNESIS: Obesità (BMI 38), Sindrome delle Apnee Ostruttive del Sonno (SAOS) e Diabete tipo II.
+EXAMINATIONS: HbA1c 7.5%, Polisonnografia con indice AHI 20 (apnea moderata).
+ANESTHESIOLOGICAL NOTE: Prevista necessità di CPAP nel post-operatorio e monitoraggio continuo della saturazione.

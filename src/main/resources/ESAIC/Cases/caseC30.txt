@@ -1,0 +1,6 @@
+CASE ID: C30
+CONTEXT: Chirurgia Vascolare - Endoarteriectomia carotidea.
+SUBJECT: Uomo, 73 anni.
+ANAMNESIS: Stenosi carotidea serrata, BPCO, Diabete e Claudicatio intermittens arti inferiori.
+EXAMINATIONS: Stenosi del 90% asintomatica, evidenziata a screening.
+ANESTHESIOLOGICAL NOTE: Paziente vascolopatico polidistrettuale con rischio di stroke durante l'intervento.

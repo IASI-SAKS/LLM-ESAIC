@@ -1,0 +1,4 @@
+CASE ID: C25
+DECISION: Procedere all'intervento.
+MOTIVATION: Procedura breve che può essere eseguita in anestesia puramente locale. L'uso del blocco di plesso o dell'anestesia locale evita del tutto la manipolazione delle vie aeree.
+

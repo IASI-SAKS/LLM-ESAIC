@@ -1,0 +1,6 @@
+CASE ID: C16
+CONTEXT: Urologia - Cistectomia radicale.
+SUBJECT: Uomo, 75 anni.
+ANAMNESIS: Silicosi polmonare professionale, Ipertensione e Diabete.
+EXAMINATIONS: Rx Torace con nodularità diffuse, Spirometria con deficit misto di grado medio.
+ANESTHESIOLOGICAL NOTE: Alto rischio di svezzamento difficile dal ventilatore meccanico.

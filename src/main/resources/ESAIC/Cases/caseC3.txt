@@ -1,0 +1,6 @@
+CASE ID: C3
+CONTEXT: Urologia - Prostatectomia radicale.
+SUBJECT: Uomo, 70 anni.
+ANAMNESIS: Fibrillazione atriale cronica, Pregresso TIA e Ipercolesterolemia.
+EXAMINATIONS: In terapia con Warfarin (INR 2.5), Eco-doppler carotideo che mostra stenosi del 40%.
+ANESTHESIOLOGICAL NOTE: Necessità di gestione del bridging con Eparina a basso peso molecolare (EBPM).

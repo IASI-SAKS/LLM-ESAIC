@@ -1,0 +1,6 @@
+CASE ID: C22
+CONTEXT: Ginecologia - Gravidanza extrauterina in emergenza.
+SUBJECT: Donna, 32 anni.
+ANAMNESIS: Sindrome di Von Willebrand nota e Anemia emorragica acuta in atto.
+EXAMINATIONS: Emoglobina 8.2 g/dL, shock compensato con tachicardia marcata.
+ANESTHESIOLOGICAL NOTE: Situazione di emergenza emorragica con coagulopatia di base.

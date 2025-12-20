@@ -1,0 +1,6 @@
+CASE ID: C18
+CONTEXT: Neurochirurgia - Asportazione meningioma.
+SUBJECT: Donna, 58 anni.
+ANAMNESIS: Epilessia cronica, Ipertensione e Ipocorticosurrenalismo iatrogeno da steroidi.
+EXAMINATIONS: Elettroliti normali, dosaggio ematico degli anticonvulsivanti nel range terapeutico.
+ANESTHESIOLOGICAL NOTE: Necessità di somministrazione di una "stress dose" di idrocortisone perioperatorio.
