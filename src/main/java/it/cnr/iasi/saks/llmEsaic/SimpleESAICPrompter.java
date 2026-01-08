@@ -54,7 +54,7 @@ public class SimpleESAICPrompter extends AbstractPrompter {
 		super();
 
 		String prompt = ESAICPrompts.getPreamble();
-		String response = this.chatLLM(prompt);
+		String response = this.invokeLLM(prompt);
 		
 		this.loadedRecommendations = new HashMap<String, Boolean>();
 	}
@@ -107,7 +107,7 @@ public class SimpleESAICPrompter extends AbstractPrompter {
 		this.loadedRecommendations.clear();
 		
 		String prompt = ESAICPrompts.getRecommendationLoadingHeaderWithAck();
-		String response = this.chatLLM(prompt);
+		String response = this.invokeLLM(prompt);
 		boolean headerProcessed = response.contains(ESAICPrompts.getAck());
 		if (!headerProcessed) {
 			System.err.println("Header has not been processed as expected. Possible errors while loading the ESAIC Reccommendations");
@@ -143,7 +143,7 @@ public class SimpleESAICPrompter extends AbstractPrompter {
 		}		
 		
 		prompt = prompt + ESAICPrompts.getEndOfInput() + ESAICPrompts.getAckMessage();
-		response = this.chatLLM(prompt);
+		response = this.invokeLLM(prompt);
 		
 		System.err.println("PROMPT: " + prompt);
 		System.err.println("response: " + response);
@@ -160,8 +160,10 @@ public class SimpleESAICPrompter extends AbstractPrompter {
 			System.err.println("ESAIC Recommendations have not been processed as expected. Expected errors during the interactions");
 		}
 		
+		System.err.println("Loading grade descriptions ... ");
 		prompt = ESAICPrompts.getGradeDescriptionsHeaderWithAck();
-		response = this.chatLLM(prompt);
+		response = this.invokeLLM(prompt);
+		System.err.println("... done");
 //		headerProcessed = headerProcessed && response.contains(ESAICPrompts.getAck());
 	}
 
@@ -169,7 +171,7 @@ public class SimpleESAICPrompter extends AbstractPrompter {
 		this.loadedRecommendations.clear();
 		
 		String prompt = ESAICPrompts.getRecommendationLoadingHeaderWithAck();
-		String response = this.chatLLM(prompt);
+		String response = this.invokeLLM(prompt);
 //		boolean headerProcessed = (response.equalsIgnoreCase(ESAICPrompts.getAck()));
 		boolean headerProcessed = response.contains(ESAICPrompts.getAck());
 
@@ -195,7 +197,7 @@ public class SimpleESAICPrompter extends AbstractPrompter {
 					prompt = recID + ": " + recommendation;
 //					prompt = prompt.replace("(GRADE:", "(" + recID + " GRADE:");
 					prompt = prompt.replace("(GRADE:", "(" + recID + " has severity index:");
-					response = this.chatLLM(prompt);
+					response = this.invokeLLM(prompt);
 //					isRecommendationUnset = response.contains(UNSET);
 					isRecommendationUnset = !(response.contains(ESAICPrompts.getAck()));
 					this.loadedRecommendations.put(recID, ! isRecommendationUnset);
@@ -208,10 +210,12 @@ public class SimpleESAICPrompter extends AbstractPrompter {
 		}		
 
 		prompt = ESAICPrompts.getEndOfInput();
-		response = this.chatLLM(prompt);
+		response = this.invokeLLM(prompt);
 		
+		System.err.println("Loading grade descriptions ... ");
 		prompt = ESAICPrompts.getGradeDescriptionsHeader();
-		response = this.chatLLM(prompt);
+		response = this.invokeLLM(prompt);
+		System.err.println("... done");
 //		headerProcessed = headerProcessed && response.contains(ESAICPrompts.getAck());
 	}
 	
@@ -254,5 +258,10 @@ public class SimpleESAICPrompter extends AbstractPrompter {
 		return computeRecommendationID(String.valueOf(picoNumber), String.valueOf(recNumber));
 	}
 	
-		
+	private String invokeLLM(String prompt) {
+		String response;
+		response = this.chatLLM(prompt);
+//		response = this.addContextToLLM(prompt);
+		return response;
+	}	
 }

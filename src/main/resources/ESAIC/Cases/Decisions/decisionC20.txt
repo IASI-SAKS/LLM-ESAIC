@@ -1,0 +1,4 @@
+CASE ID: C20
+DECISION: Procedere all'intervento.
+MOTIVATION: L'altissima mortalità associata alla frattura di femore non operata giustifica l'alto rischio. Si procede dopo un'ottimizzazione emodinamica rapida effettuata nelle prime 24 ore dall'ingresso.
+

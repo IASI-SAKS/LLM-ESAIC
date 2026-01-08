@@ -1,0 +1,6 @@
+CASE ID: C6
+CONTEXT: Oculistica - Vitrectomia.
+SUBJECT: Uomo, 65 anni.
+ANAMNESIS: Glaucoma bilaterale, Ipertensione sistemica e Pregresso IMA avvenuto 10 mesi fa.
+EXAMINATIONS: Pressione Arteriosa 130/80 mmHg, ECG con esiti di necrosi inferiore ma senza ischemia attuale.
+ANESTHESIOLOGICAL NOTE: Obiettivo di evitare aumenti della pressione intraoculare e sbalzi pressori sistemici.

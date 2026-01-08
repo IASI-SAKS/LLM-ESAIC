@@ -23,6 +23,7 @@ import java.util.List;
 
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.data.message.ChatMessage;
+import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.ollama.OllamaChatModel;
@@ -33,8 +34,21 @@ public abstract class AbstractPrompter {
 	protected String lastResponse;
  
 	private static final String OLLAMA_BASE_URL = "http://localhost:11434";
+// *****************************************************
+// *****************************************************
     private static final String LLM_NAME = "llama3.2";
     private static final String LLM_VERSION = "latest";
+// *****************************************************
+//	  private static final String LLM_NAME = "Almawave/Velvet";
+//    private static final String LLM_VERSION = "latest";
+// *****************************************************
+//    private static final String LLM_NAME = "jobautomation/OpenEuroLLM-Italian";
+//    private static final String LLM_VERSION = "latest";    
+// *****************************************************
+//    private static final String LLM_NAME = "meditron";
+//    private static final String LLM_VERSION = "latest";    
+// *****************************************************
+// *****************************************************
 //    private static final double LLM_TEMPERATURE = 0.8;
     private static final double LLM_TEMPERATURE = 0.5;
 //    private static final double LLM_TEMPERATURE = 0.0;
@@ -58,9 +72,10 @@ public abstract class AbstractPrompter {
 		                       .modelName(llmName)
 		                       .temperature(LLM_TEMPERATURE)
 		                       .timeout(Duration.ofSeconds(LLM_TIMEOUT))
+//		                       .seed(17)
 		                       .build();
 
-	    this.chatMessageHistory = new ArrayList<ChatMessage>();	    
+	    this.chatMessageHistory = new ArrayList<ChatMessage>();	 
 	}
 
 	public AbstractPrompter (ChatModel llm) {
@@ -112,6 +127,17 @@ public abstract class AbstractPrompter {
 		return this.lastResponse;		
 	}
 
+	/*
+	 * It instructs LLM with a system prompt that is kept as part of the past history. The answer to this prompt by the LLM is not kept in the history.
+	 */
+	public String addContextToLLM(String prompt) {    			
+		SystemMessage currentMessage = new SystemMessage(prompt);
+		AiMessage currentResponse = this.partialChatLLM(currentMessage);
+				
+		this.lastResponse = currentResponse.text(); 		
+		return this.lastResponse;		
+	}
+	
 //	protected String chatLLM(String prompt) {
 ////		Conceptual example with Java Varargs from the tutorial:		
 ////	    	UserMessage firstUserMessage = UserMessage.from("Hello, my name is Klaus");
@@ -131,7 +157,7 @@ public abstract class AbstractPrompter {
 //			return this.lastResponse;		
 //		}
 
-	private AiMessage partialChatLLM(UserMessage currentMessage) {
+	private AiMessage partialChatLLM(ChatMessage currentMessage) {
 //		Conceptual example with Java Varargs from the tutorial:		
 //	    	UserMessage firstUserMessage = UserMessage.from("Hello, my name is Klaus");
 //	    	AiMessage firstAiMessage = model.chat(firstUserMessage).aiMessage(); // Hi Klaus, how can I help you?
@@ -147,7 +173,7 @@ public abstract class AbstractPrompter {
 			return currentResponse;
 		}
 
-	private AiMessage fullChatLLM(UserMessage currentMessage) {
+	private AiMessage fullChatLLM(ChatMessage currentMessage) {
 			AiMessage currentResponse = this.partialChatLLM(currentMessage);
 			this.chatMessageHistory.add(currentResponse);
 

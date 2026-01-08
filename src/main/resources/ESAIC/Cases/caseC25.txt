@@ -1,0 +1,6 @@
+CASE ID: C25
+CONTEXT: Ortopedia - Decompressione Tunnel carpale.
+SUBJECT: Donna, 54 anni.
+ANAMNESIS: Sclerodermia (Sclerosi sistemica), Fenomeno di Raynaud e Ipertensione polmonare lieve.
+EXAMINATIONS: Ecocardio con PAPs 38 mmHg, apertura della bocca limitata.
+ANESTHESIOLOGICAL NOTE: Previsione di intubazione difficile (microstomia) e rischio di crisi sclerodermica.

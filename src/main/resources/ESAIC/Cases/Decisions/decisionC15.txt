@@ -1,0 +1,4 @@
+CASE ID: C15
+DECISION: Procedere all'intervento.
+MOTIVATION: Funzione cardiaca entro i limiti di sicurezza per interventi elettivi. Sebbene le antracicline siano cardiotossiche, una frazione d'eiezione superiore al 50% garantisce stabilità.
+

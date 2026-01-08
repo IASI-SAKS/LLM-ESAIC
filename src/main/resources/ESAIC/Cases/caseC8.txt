@@ -1,0 +1,6 @@
+CASE ID: C8
+CONTEXT: Ortopedia - Protesi di ginocchio.
+SUBJECT: Donna, 72 anni.
+ANAMNESIS: Artrite Reumatoide, Osteoporosi e Ipertensione.
+EXAMINATIONS: Rx colonna cervicale che conferma stabilità atlo-assiale conservata.
+ANESTHESIOLOGICAL NOTE: Attenzione estrema alla manovra di intubazione per possibile fragilità cervicale e ridotta apertura orale. Preferire loco-regionale/subaracnoidea.

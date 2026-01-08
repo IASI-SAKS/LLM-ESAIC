@@ -1,0 +1,6 @@
+CASE ID: C21
+CONTEXT: Chirurgia Generale - Appendicectomia.
+SUBJECT: Giovane, 25 anni.
+ANAMNESIS: Fibrosi Cistica, Diabete correlato alla FC e Malnutrizione.
+EXAMINATIONS: Saturazione basale 92%, presenza di secrezioni bronchiali molto dense.
+ANESTHESIOLOGICAL NOTE: Elevato rischio di ostruzione mucosa delle vie aeree durante e dopo l'estubazione.

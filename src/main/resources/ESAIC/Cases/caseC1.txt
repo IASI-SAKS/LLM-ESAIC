@@ -1,0 +1,6 @@
+CASE ID: C1
+CONTEXT: Chirurgia Generale - Colecistectomia laparoscopica.
+SUBJECT: Donna, 74 anni.
+ANAMNESIS: Diabete Mellito II insulino-dipendente, Ipertensione arteriosa cronica e Insufficienza Renale Cronica (IRC) Stadio III.
+EXAMINATIONS: HbA1c 7.8%, Creatinina 1.9 mg/dL, Pressione Arteriosa 150/90 mmHg.
+ANESTHESIOLOGICAL NOTE: Classe ASA III. Il rischio principale è legato alla nefropatia da contrasto e alla gestione della glicemia intraoperatoria.

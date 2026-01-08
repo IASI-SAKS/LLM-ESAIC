@@ -1,0 +1,6 @@
+CASE ID: C13
+CONTEXT: Maxillo-Facciale - Resezione lingua per carcinoma.
+SUBJECT: Uomo, 60 anni.
+ANAMNESIS: Etilismo cronico attivo, forte fumatore e stato di malnutrizione.
+EXAMINATIONS: Albumina 2.8 g/dL, INR 1.3, Emoglobina 10.5 g/dL.
+ANESTHESIOLOGICAL NOTE: Rischio di sindrome da astinenza intraoperatoria e difficoltà di cicatrizzazione dei tessuti.

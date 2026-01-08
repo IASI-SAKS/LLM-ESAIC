@@ -1,0 +1,4 @@
+CASE ID: C16
+DECISION: Procedere all'intervento.
+MOTIVATION: Carcinoma vescicale infiltrante ad alto grado; rischio accettato e condiviso con il paziente. Si opta per un'estubazione precoce in sala e fisioterapia respiratoria intensiva immediata.
+

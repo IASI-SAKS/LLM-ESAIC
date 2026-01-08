@@ -1,0 +1,4 @@
+CASE ID: C8
+DECISION: Procedere all'intervento.
+MOTIVATION: Quadro clinico ottimizzato e assenza di instabilità vertebrale. La valutazione pre-operatoria della mobilità del collo è cruciale nell'artrite reumatoide per prevenire lesioni midollari iatrogene.
+

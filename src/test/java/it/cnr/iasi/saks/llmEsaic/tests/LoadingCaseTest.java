@@ -58,7 +58,17 @@ public class LoadingCaseTest {
 //    @CsvSource({"B2", "B30", "B3"})
 //    @CsvSource({"B4", "B5", "B6"})
 //    @CsvSource({"B7", "B8", "B9"})
-    @CsvSource({"A1", "B14"})
+//    @CsvSource({"C10", "C11", "C12"})
+//    @CsvSource({"C13", "C14", "C15"})
+//    @CsvSource({"C16", "C17", "C18"})
+//    @CsvSource({"C19", "C1", "C20"})
+//    @CsvSource({"C21", "C22", "C23"})
+//    @CsvSource({"C24", "C25", "C26"})
+//    @CsvSource({"C27", "C28", "C29"})
+//    @CsvSource({"C2", "C30", "C3"})
+//    @CsvSource({"C4", "C5", "C6"})
+//    @CsvSource({"C7", "C8", "C9"})
+    @CsvSource({"A1", "B14", "C24"})
     public void processCasesWithoutAssessingSuggestionsTest(String caseID) {    	
     	System.err.println("Processing caseID: " + caseID + " ... ");
     	prompter.loadCase(caseID);

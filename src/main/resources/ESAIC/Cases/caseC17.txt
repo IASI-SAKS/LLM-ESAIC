@@ -1,0 +1,6 @@
+CASE ID: C17
+CONTEXT: Chirurgia Generale - Laparocele gigante.
+SUBJECT: Donna, 62 anni.
+ANAMNESIS: Insufficienza venosa cronica, Pregressa TVP e Obesità.
+EXAMINATIONS: Ecocolordoppler arti inferiori negativo per trombosi attuali.
+ANESTHESIOLOGICAL NOTE: Score di Caprini molto elevato; rischio tromboembolico perioperatorio critico.

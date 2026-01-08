@@ -1,0 +1,4 @@
+CASE ID: C29
+DECISION: Procedere all'intervento.
+MOTIVATION: Splenectomia indicata come terapia definitiva per ITP refrattaria ai farmaci. Piastrine sopra 50.000 sono sufficienti per la chirurgia addominale; le trasfusioni sono riservate all'urgenza.
+

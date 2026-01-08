@@ -1,0 +1,6 @@
+CASE ID: C24
+CONTEXT: Chirurgia Generale - Ernioplastica.
+SUBJECT: Uomo, 66 anni.
+ANAMNESIS: Cirrosi epatica Classe Child-Pugh B, Piastrinopenia e Varici esofagee.
+EXAMINATIONS: Piastrine 60.000/mm³, INR 1.5, Albumina 3.0 g/dL.
+ANESTHESIOLOGICAL NOTE: Rischio emorragico intraoperatorio moderato e rischio di insufficienza epatica.

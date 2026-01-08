@@ -1,0 +1,4 @@
+CASE ID: C21
+DECISION: Procedere all'intervento.
+MOTIVATION: Emergenza chirurgica addominale (appendicite acuta). Si esegue una pre-ossigenazione prolungata e una toilet bronchiale accurata sotto guida fibroscopica.
+

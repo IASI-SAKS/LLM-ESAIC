@@ -1,0 +1,4 @@
+CASE ID: C12
+DECISION: Procedere all'intervento.
+MOTIVATION: Paziente ritenuto operabile secondo i calcoli della funzionalità respiratoria stimata. La chirurgia è fattibile se il FEV1 predetto post-operatorio rimane superiore al 40% del valore teorico.
+

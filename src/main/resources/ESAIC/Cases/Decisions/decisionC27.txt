@@ -1,0 +1,4 @@
+CASE ID: C27
+DECISION: Procedere all'intervento.
+MOTIVATION: Ostruzione respiratoria nasale severa che impatta sulla qualità della vita e del sonno. La stabilità cardiaca post-correzione permette una generale standard con ausilio di videolaringoscopio.
+

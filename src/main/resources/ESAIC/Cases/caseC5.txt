@@ -1,0 +1,6 @@
+CASE ID: C5
+CONTEXT: Chirurgia Generale - Ernioplastica ombelicale.
+SUBJECT: Donna, 68 anni.
+ANAMNESIS: Ipotiroidismo, Sindrome Metabolica e Sindrome di Sjögren.
+EXAMINATIONS: TSH 3.2 mU/L, Glicemia 110 mg/dL, Test di Schirmer positivo per iposecrezione lacrimale.
+ANESTHESIOLOGICAL NOTE: Rischio di secchezza estrema delle mucose; necessaria protezione oculare accurata intraoperatoria.

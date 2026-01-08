@@ -1,0 +1,6 @@
+CASE ID: C7
+CONTEXT: Chirurgia Generale - Tiroidectomia.
+SUBJECT: Donna, 55 anni.
+ANAMNESIS: Gozzo multinodulare, Asma bronchiale allergico e Allergia severa ai FANS.
+EXAMINATIONS: Spirometria nella norma, Fibroscopia con corde vocali mobili.
+ANESTHESIOLOGICAL NOTE: Gestione multimodale del dolore obbligatoria senza l'uso di FANS (Paracetamolo e Oppioidi).

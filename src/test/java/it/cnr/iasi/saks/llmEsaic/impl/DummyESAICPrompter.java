@@ -52,7 +52,7 @@ public class DummyESAICPrompter extends SimpleESAICPrompter {
 			this.pastWrongAnswers = new ArrayList<String>();
 			
 			response = this.queryLLM(prompt);
-			response = this.clearResponse(response);
+			response = this.cleanResponse(response);
 		}
 		
 		return response;
@@ -75,7 +75,7 @@ public class DummyESAICPrompter extends SimpleESAICPrompter {
 					+ "? Your answer must start with the keyword: \""+ this.lastProcessedRecID + " GRADE:\""; 
 
 			response = this.chatLLM(prompt);
-			response = this.clearResponse(response);
+			response = this.cleanResponse(response);
 			this.configureHistory(backupHistory);
 		}
 		
@@ -86,7 +86,7 @@ public class DummyESAICPrompter extends SimpleESAICPrompter {
 		return this.fetchHistory().size();
 	}
 	
-	private String clearResponse(String response) {
+	private String cleanResponse(String response) {
 		return response.replaceFirst(".*GRADE:","").trim();		
 	}
 	

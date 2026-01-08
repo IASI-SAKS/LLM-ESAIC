@@ -1,0 +1,6 @@
+CASE ID: C26
+CONTEXT: Chirurgia Generale - Gastrectomia parziale.
+SUBJECT: Uomo, 70 anni.
+ANAMNESIS: Miocardiopatia dilatativa e Deficit congenito di Antitrombina III.
+EXAMINATIONS: Frazione d'eiezione 35%, anamnesi positiva per pregresse trombosi venose.
+ANESTHESIOLOGICAL NOTE: Altissimo rischio combinato emodinamico (scompenso) e trombotico.

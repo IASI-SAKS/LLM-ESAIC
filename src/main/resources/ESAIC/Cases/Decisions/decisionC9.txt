@@ -1,0 +1,4 @@
+CASE ID: C9
+DECISION: Procedere all'intervento.
+MOTIVATION: Urgenza chirurgica e ottimo compenso del sistema immunitario. Non vi è evidenza di aumento di complicanze post-operatorie in pazienti HIV+ stabilizzati con terapia ART.
+

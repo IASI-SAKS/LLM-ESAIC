@@ -1,0 +1,6 @@
+CASE ID: C27
+CONTEXT: Otorinolaringoiatria - Settoplastica.
+SUBJECT: Uomo, 30 anni.
+ANAMNESIS: Sindrome di Down, Comunicazione interatriale (DIA) corretta nell'infanzia e Obesità.
+EXAMINATIONS: ECG normale, Rx colonna cervicale negativa per instabilità.
+ANESTHESIOLOGICAL NOTE: Gestione delle vie aeree potenzialmente difficile dovuta a macroglossia e collo corto.

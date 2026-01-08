@@ -1,0 +1,4 @@
+CASE ID: C10
+DECISION: Procedere all'intervento.
+MOTIVATION: Rischio respiratorio gestibile mediante protocollo specifico per pazienti obesi. L'uso di tecniche di anestesia "Opioid-sparing" riduce drasticamente il rischio di depressione respiratoria post-operatoria.
+

@@ -1,0 +1,6 @@
+CASE ID: C29
+CONTEXT: Chirurgia Generale - Splenectomia.
+SUBJECT: Donna, 42 anni.
+ANAMNESIS: Porpora piastrinopenica autoimmune (ITP) e Lupus Eritematoso Sistemico (LES).
+EXAMINATIONS: Conta piastrinica 45.000/mm³, positività agli anticorpi ANA.
+ANESTHESIOLOGICAL NOTE: Preparazione con Immunoglobuline endovena e boli di steroidi.

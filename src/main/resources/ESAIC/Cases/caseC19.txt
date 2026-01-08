@@ -1,0 +1,6 @@
+CASE ID: C19
+CONTEXT: Chirurgia Generale - Emorroidectomia.
+SUBJECT: Uomo, 45 anni.
+ANAMNESIS: Miastenia Gravis in remissione, Pregresso timoma e Asma.
+EXAMINATIONS: Assenza di sintomi di debolezza muscolare da oltre un anno.
+ANESTHESIOLOGICAL NOTE: Necessità di evitare farmaci miorilassanti; si preferisce l'anestesia spinale.

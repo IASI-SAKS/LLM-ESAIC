@@ -1,0 +1,6 @@
+CASE ID: C20
+CONTEXT: Ortopedia - Sintesi frattura femore.
+SUBJECT: Donna, 88 anni.
+ANAMNESIS: Portatrice di Pacemaker, Scompenso cardiaco congestizio, Anemia e Demenza.
+EXAMINATIONS: Emoglobina 9.0 g/dL, PMK funzionante al controllo, Edemi declivi presenti.
+ANESTHESIOLOGICAL NOTE: Intervento considerato salva-vita per la ripresa della mobilità e prevenzione piaghe.

@@ -1,0 +1,6 @@
+CASE ID: C11
+CONTEXT: Chirurgia Generale - Resezione colon.
+SUBJECT: Uomo, 85 anni.
+ANAMNESIS: Demenza di Alzheimer iniziale, Ipertensione e Morbo di Parkinson.
+EXAMINATIONS: MMSE 22/30, Valutazione geriatrica con fragilità moderata.
+ANESTHESIOLOGICAL NOTE: Elevato rischio di Delirium Post-Operatorio (POD) e complicanze da allettamento.
