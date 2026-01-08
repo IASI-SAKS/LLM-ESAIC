@@ -105,13 +105,13 @@ public class ESAICPrompts {
 //			+ "Finally, if the case conflicts with many weak ESAIC Recommendations, you shall advise to postpone surgery. "
 // **********************************
 // quater			
-						+ "These cases concern patients that need to undergo surgery thus, you should advice to proceed with the surgey unless you notice major motivations in order to postpone it. "
-						+ "Specifically, use the following procedure to evaluate the case: "
-						+ "if the case violates any strong ESAIC Recommendation, you shall advise to postpone surgery; "
-						+ "if changing any treatment will improve the conditions of the patient in the short term, you should advise to postpone surgery; "
-						+ "if further examinations could improve the overall understanding of the case, you should advise to postpone surgery; "
-						+ "if the case conflicts with many weak ESAIC Recommendations, you should advise to postpone surgery; "
-						+ "if none of the above conditions, you shall advise to proceed with the surgery. "
+//						+ "These cases concern patients that need to undergo surgery thus, you should advice to proceed with the surgey unless you notice major motivations in order to postpone it. "
+//						+ "Specifically, use the following procedure to evaluate the case: "
+//						+ "if the case violates any strong ESAIC Recommendation, you shall advise to postpone surgery; "
+//						+ "if changing any treatment will improve the conditions of the patient in the short term, you should advise to postpone surgery; "
+//						+ "if further examinations could improve the overall understanding of the case, you should advise to postpone surgery; "
+//						+ "if the case conflicts with many weak ESAIC Recommendations, you should advise to postpone surgery; "
+//						+ "if none of the above conditions, you shall advise to proceed with the surgery. "
 // End CoT			
 			+ "Each clinical case is reported as a whole between the following tags: "
 			+ BEGIN_OF_INPUT + ", and " + END_OF_INPUT + ". "
