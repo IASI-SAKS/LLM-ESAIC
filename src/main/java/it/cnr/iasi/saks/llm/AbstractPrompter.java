@@ -51,7 +51,10 @@ public abstract class AbstractPrompter {
 //    private static final String LLM_NAME = "medllama2";
 //    private static final String LLM_VERSION = "latest";    
 // *****************************************************
-    private static final String LLM_NAME = "monotykamary/medichat-llama3";
+//    private static final String LLM_NAME = "monotykamary/medichat-llama3";
+//    private static final String LLM_VERSION = "latest";    
+// *****************************************************
+    private static final String LLM_NAME = "gemma3";
     private static final String LLM_VERSION = "latest";    
 // *****************************************************
 // *****************************************************
